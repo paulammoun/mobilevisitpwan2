@@ -2833,7 +2833,7 @@ if(typeof DLG1_DlgObj == 'object') {
 		html: '<div style="display:none;"></div>'
 	},
 	footer: {
-		html: '<div style="display:table; margin:auto;"><div class="A5CWLayout" style="width: " >  <div id="DLG1.V.R1.STATICTEXT_8" title=""  class="" style="font-size: 7pt; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;"   ><strong>Copyright 2019-2025 PCS  Version 1.3.0 (build  30)</strong></div> </div> </div>',
+		html: '<div style="display:table; margin:auto;"><div class="A5CWLayout" style="width: " >  <div id="DLG1.V.R1.STATICTEXT_8" title=""  class="" style="font-size: 7pt; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;"   ><strong>Copyright 2019-2025 PCS  Version 1.3.0 (build  31)</strong></div> </div> </div>',
 		show: true
 	},
 	overlay: {
@@ -14229,7 +14229,7 @@ for(var i = 0; i < data.length; i++){
 	_hideColumns: function() { 
 }
 ,
-	theme: 'Alpha-Magenta',
+	theme: 'Alpha-Magenta:subtle',
 	scroll: {
 		axis: 'both',
 		indicator: {
@@ -15369,12 +15369,6 @@ if(this.multiple ) return;
 ,
 	_useServerSideSyncLog: false,
 	items: {
-'_MENU_onClick_Menu' : {
-	"selectable": false,
-	"onClick": function(index,v,args) { 					var data = this._data[this._dataMap[index]];
-					(function(rowNumber,value,ia,data,lObj,listObj) { listObj.setValue(rowNumber,true);lObj.__list_menu_show('MENU',rowNumber); }(index,v,args,data,this,this))
-				}
-},
 '_systemButtononClick_MakeVisit' : {
 	"selectable": true,
 	"onClick": function(index,v,args) { 					var data = this._data[this._dataMap[index]];
@@ -15397,6 +15391,12 @@ setTimeout(function() {
  DLG1_DlgObj.setValueFrom('txtpoilong','list::LSTOFFROUTE::LONT') ;
  setTimeout(makeVisit,250);
 },100); }(index,v,args,data,this,this))
+				}
+},
+'_MENU_onClick_Menu' : {
+	"selectable": false,
+	"onClick": function(index,v,args) { 					var data = this._data[this._dataMap[index]];
+					(function(rowNumber,value,ia,data,lObj,listObj) { listObj.setValue(rowNumber,true);lObj.__list_menu_show('MENU',rowNumber); }(index,v,args,data,this,this))
 				}
 }
 },
@@ -34894,10 +34894,10 @@ DLG1_DlgObj._listSystemOnClick('LSTITEMS',this.selection[0]);
 			'        </div>',
 			'    </div>',
 			'<div style="display: table; width: 97%; padding: 1px; margin-left: auto; margin-right: auto;">',
-			'    <div style="display: table-cell; vertical-align: middle; text-align: left; width: 50%; overflow: hidden; text-overflow: ellipsis; font-size: 10px;">',
+			'    <div style="display: table-cell; vertical-align: middle; text-align: left; width: 50%; overflow: hidden; text-overflow: ellipsis; font-size: 15px;">',
 			'        <b>Qty:</b> <span id="DLG1.LSTITEMS.MINUS.I.{*dataRow}"><button  a5-item="_systemButtononClick_minus"  id="DLG1.LSTITEMS.MINUS.BTN.{*dataRow}"  class="[class.dialogButton]" style="cursor:pointer;" title="">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-removeRounded:icon,24{ fill: #f81a1a;}\'>>)}</button></span><span id="DLG1.LSTITEMS.QTY.I.{*dataRow}">{qty}</span><span id="DLG1.LSTITEMS.PLUS.I.{*dataRow}"><button  a5-item="_systemButtononClick_plus"  id="DLG1.LSTITEMS.PLUS.BTN.{*dataRow}"  class="[class.dialogButton]" style="cursor:pointer;" title="">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-addCircle:icon,24\'>>)}</button></span>',
 			'    </div>',
-			'            <div style="display: table-cell; vertical-align: middle; text-align: left; width: 50%; overflow: hidden; text-overflow: ellipsis; font-size: 10px;">',
+			'            <div style="display: table-cell; vertical-align: middle; text-align: left; width: 50%; overflow: hidden; text-overflow: ellipsis; font-size: 15px;">',
 			'    \t    <b>Bonus:</b> <span id="DLG1.LSTITEMS.MINUSB.I.{*dataRow}"><button  a5-item="_systemButtononClick_minusb"  id="DLG1.LSTITEMS.MINUSB.BTN.{*dataRow}"  class="[class.dialogButton]" style="cursor:pointer;" title="">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-removeRounded:icon,24{ fill: #f81a1a;}\'>>)}</button></span><span id="DLG1.LSTITEMS.BONUS.I.{*dataRow}">{bonus}</span><span id="DLG1.LSTITEMS.PLUSB.I.{*dataRow}"><button  a5-item="_systemButtononClick_plusb"  id="DLG1.LSTITEMS.PLUSB.BTN.{*dataRow}"  class="[class.dialogButton]" style="cursor:pointer;" title="">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-addCircle:icon,24\'>>)}</button></span>',
 			'    \t    </div>',
 			'</div>',
@@ -45002,42 +45002,6 @@ return txt
     "theme": "Alpha-Magenta",
     "edge": "bottom",
     "items": {
-        "Add one  Item": {
-            "type": "button",
-            "autoHideDisclosure": "auto",
-            "bind": {},
-            "actions": {
-                "click": "Add one  Item_onClick"
-            },
-            "settings": {
-                "layout": "text",
-                "html": "Add one  Item"
-            }
-        },
-        "Add Basket": {
-            "type": "button",
-            "autoHideDisclosure": "auto",
-            "bind": {},
-            "actions": {
-                "click": "Add Basket_onClick"
-            },
-            "settings": {
-                "layout": "text",
-                "html": "Add Basket"
-            }
-        },
-        "Delete Item": {
-            "type": "button",
-            "autoHideDisclosure": "auto",
-            "bind": {},
-            "actions": {
-                "click": "Delete Item_onClick"
-            },
-            "settings": {
-                "layout": "text",
-                "html": "Delete Item"
-            }
-        },
         "Menu": {
             "type": "disclosure-button",
             "disclosure": {
@@ -45064,21 +45028,11 @@ return txt
                     "html": "Button",
                     "icon": "svgIcon=#alpha-icon-bars:icon,24"
                 }
-            }
-        },
-        "Order Total": {
-            "type": "button",
-            "autoHideDisclosure": "auto",
-            "bind": {},
-            "actions": {
-                "click": "Order Total_onClick"
             },
-            "settings": {
-                "layout": "text",
-                "html": "View Order Total"
-            }
+            "actions": {}
         },
         "Add Multiple": {
+            "size": "",
             "type": "button",
             "autoHideDisclosure": "auto",
             "bind": {},
@@ -45091,6 +45045,7 @@ return txt
             }
         },
         "Other": {
+            "size": "",
             "type": "button",
             "autoHideDisclosure": "auto",
             "bind": {},
@@ -45102,49 +45057,50 @@ return txt
                 "html": "Other"
             }
         },
-        "Add Item With Bonus": {
+        "AddBasket": {
+            "size": "",
             "type": "button",
             "autoHideDisclosure": "auto",
             "bind": {},
             "actions": {
-                "click": "Add Item With Bonus_onClick"
+                "click": "AddBasket_onClick"
             },
             "settings": {
-                "layout": "text",
-                "html": "Add Item With Bonus"
+                "layout": "icon text",
+                "icon": "svgIcon=#alpha-icon-basketRemoveSolid:icon,24{ fill: #ed1313;}",
+                "html": "AddBasket"
+            }
+        },
+        "DeleteItem": {
+            "size": "",
+            "type": "button",
+            "autoHideDisclosure": "auto",
+            "bind": {},
+            "actions": {
+                "click": "DeleteItem_onClick"
+            },
+            "settings": {
+                "layout": "icon text",
+                "icon": "svgIcon=#alpha-icon-xLarge:icon,24{ fill: #ee0a0a;}",
+                "html": "DeleteItem"
+            }
+        },
+        "Add": {
+            "size": "",
+            "type": "button",
+            "autoHideDisclosure": "auto",
+            "bind": {},
+            "actions": {
+                "click": "Add_onClick"
+            },
+            "settings": {
+                "layout": "icon text",
+                "icon": "svgIcon=#alpha-icon-addCircleBorder:icon,24",
+                "html": "Add"
             }
         }
     },
     "actions": {
-        "Add_one__Item_onClick": function(data) {DLG1_DlgObj.setValue('additemwithbonus',0);
-DLG1_DlgObj.panelSetActive('PANELCARD_15');},
-        "Add_Basket_onClick": function(data) {
-DLG1_DlgObj.setValue('flagadditem',3);
-DLG1_DlgObj.panelSetActive('PANELCARD_BASKET');
-},
-        "Delete_Item_onClick": function(data) {mBasketId=DLG1_DlgObj.getValue('list::lstorders::basketid')
-if(mBasketId==0){
- var lObj = DLG1_DlgObj.getControl('lstorders');
- lObj.deleteRow()
-} else {
- var lObj = DLG1_DlgObj.getControl('lstorders');
- mLenght = lObj._data.length
- var ii = mLenght-1;;
- var interval = setInterval(function(){
-  mValue = lObj._values[ii] ;
-  mBasketData = lObj._data[ii].basketid ;
-   if(mBasketData == mBasketId){
-    lObj.setValue(mValue) ;
-    var opts = {};
-      opts.prompt = false;
-      lObj.deleteRow(opts) ;
-   mits=DLG1_DlgObj.getValue('list::LSTBASKETDET::qty');
-   }
-      ii--;
-     if(ii <= -1) clearInterval(interval);
- }, 3000);
-}},
-        "Order_Total_onClick": function(data) {DLG1_DlgObj.panelSetActive('PANELCARD_ORDERTOTALS');},
         "Add_Multiple_onClick": function(data) {var lObj = DLG1_DlgObj.getControl('LSTITEMS');
 var i;
 for (i = 0; i < lObj._data.length; i++) {
@@ -45155,9 +45111,19 @@ var listObj = DLG1_DlgObj.getControl('LSTITEMS');
 listObj.refresh();
 DLG1_DlgObj.panelSetActive('PANELCARD_ITEMS_ALL');},
         "Shipwind_onClick": function(data) {DLG1_DlgObj.runAction('openshipwindow');},
-        "Add_Item_With_Bonus_onClick": function(data) {
-DLG1_DlgObj.setValue('additemwithbonus',1);
-DLG1_DlgObj.panelSetActive('PANELCARD_15');}
+        "AddBasket_onClick": function(data) {DLG1_DlgObj.setValue('flagadditem',3);
+DLG1_DlgObj.panelSetActive('PANELCARD_BASKET');
+},
+        "DeleteItem_onClick": function(data) {alert('this action not yet defined');},
+        "Add_onClick": function(data) {var lObj = DLG1_DlgObj.getControl('LSTITEMS');
+var i;
+for (i = 0; i < lObj._data.length; i++) {
+	lObj._data[i].qty = 0 ;
+	lObj._data[i].bonus = 0 ;
+};
+var listObj = DLG1_DlgObj.getControl('LSTITEMS');
+listObj.refresh();
+DLG1_DlgObj.panelSetActive('PANELCARD_ITEMS_ALL');}
     },
     "layout": "Default",
     "layouts": {
@@ -45165,14 +45131,10 @@ DLG1_DlgObj.panelSetActive('PANELCARD_15');}
             "lines": [
                 {
                     "before": {
-                        "items": [
-                            "Order Total"
-                        ]
+                        "items": []
                     },
                     "middle": {
-                        "items": [
-                            "Other"
-                        ]
+                        "items": []
                     },
                     "after": {
                         "items": [
@@ -45185,7 +45147,7 @@ DLG1_DlgObj.panelSetActive('PANELCARD_15');}
     },
     "disclosures": {
         "Disclosure1": {
-            "html": "[Add Basket] [Delete Item] [Add Items] ",
+            "html": "[Add] [DeleteItem] [AddBasket]",
             "type": "template"
         }
     }
@@ -69211,7 +69173,7 @@ DLG1_DlgObj.__info = {
 	"dateCreated": "2018-10-14",
 	"dateLastEdited": "2025-3-29",
 	"comments": "",
-	"revisionnumber": 2070
+	"revisionnumber": 2073
 }
 A5.__csdfmt = (obj) =>{ if(obj) return obj.stateInfo.__dtfmt};DLG1_DlgObj._workingPreview = false;
 $u.decimal = '.';
