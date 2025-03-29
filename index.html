@@ -216,6 +216,16 @@ iframe {-webkit-user-select: text;}
   text-decoration: none !important;
   padding: 0 !important;
   margin: 0 !important; }
+.KanbanColumns {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start; }
+.KanbanColumns .KanbanColumn {
+  background: #f0f0f0;
+  border: 1px solid #eee;
+  margin: 10px;
+  flex: 1 auto; }
 .listItemHover,
 .listItemSelected,
 .listFocus {
@@ -12710,7 +12720,7 @@ this._selectedRow = this.selection[0];
 			'\t</div>',
 			'\t</div>\t',
 			'    <div style="display: table-cell; width: 40px; text-align: left; vertical-align: middle;">',
-			'        <span id="DLG1.LSTROUTES.MAKE VISIT.I.{*dataRow}"><button  a5-item="_systemButtononClick_Make Visit"  id="DLG1.LSTROUTES.MAKE VISIT.BTN.{*dataRow}"  class="[class.dialogButton]" style="cursor:pointer;" title="">Start Visit</button></span>',
+			'        <span id="DLG1.LSTROUTES.MAKE VISIT.I.{*dataRow}"><button  a5-item="_systemButtononClick_Make Visit"  id="DLG1.LSTROUTES.MAKE VISIT.BTN.{*dataRow}"  class="buttonPrimary" style="cursor:pointer;" title="">Start Visit</button></span>',
 			'\t</div>',
 			'',
 			'</div>']
@@ -13656,12 +13666,6 @@ if(this.multiple ) return;
 ,
 	_useServerSideSyncLog: false,
 	items: {
-'_MENU_onClick_menu1' : {
-	"selectable": false,
-	"onClick": function(index,v,args) { 					var data = this._data[this._dataMap[index]];
-					(function(rowNumber,value,ia,data,lObj,listObj) { listObj.setValue(rowNumber,true);lObj.__list_menu_show('MENU1',rowNumber); }(index,v,args,data,this,this))
-				}
-},
 '_systemButtononClick_Make Visit' : {
 	"selectable": true,
 	"onClick": function(index,v,args) { 					var data = this._data[this._dataMap[index]];
@@ -13681,6 +13685,12 @@ if(this.multiple ) return;
  DLG1_DlgObj.setValueFrom('txtpoilong','list::LSTROUTES::LONT') ;
  setTimeout(makeVisit,250);
 },100); }(index,v,args,data,this,this))
+				}
+},
+'_MENU_onClick_menu1' : {
+	"selectable": false,
+	"onClick": function(index,v,args) { 					var data = this._data[this._dataMap[index]];
+					(function(rowNumber,value,ia,data,lObj,listObj) { listObj.setValue(rowNumber,true);lObj.__list_menu_show('MENU1',rowNumber); }(index,v,args,data,this,this))
 				}
 }
 },
@@ -31315,7 +31325,7 @@ for(var i = 0; i < data.length; i++){
 	_hideColumns: function() { 
 }
 ,
-	theme: 'Alpha-Magenta',
+	theme: 'Alpha-Magenta:subtleLined',
 	scroll: {
 		axis: 'both',
 		indicator: {
@@ -32838,7 +32848,7 @@ for(var i = 0; i < r.length; i++) {
 	A5.u.object.set(data,r[i].path,r[i].value);
 }
 },
-	theme: 'Alpha-Magenta',
+	theme: 'Alpha-Magenta:subtleLined',
 	scroll: {
 		axis: 'both',
 		indicator: {
@@ -69173,7 +69183,7 @@ DLG1_DlgObj.__info = {
 	"dateCreated": "2018-10-14",
 	"dateLastEdited": "2025-3-29",
 	"comments": "",
-	"revisionnumber": 2073
+	"revisionnumber": 2074
 }
 A5.__csdfmt = (obj) =>{ if(obj) return obj.stateInfo.__dtfmt};DLG1_DlgObj._workingPreview = false;
 $u.decimal = '.';
