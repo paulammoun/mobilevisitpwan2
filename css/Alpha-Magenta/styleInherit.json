@@ -70,20 +70,20 @@
 		"Value": "rgba(0,0,0,.1)"
 	}],
 	"xsass": "$btnShadow:  7px 7px 13px -6px rgba(0, 0, 0, 0.2);  // *AA:Button|Shadow|box-shadow|Style of button shadow\r\n.button, .buttonDD, .buttonSplit { box-shadow: $btnShadow; }",
-	"sass": "",
-	"js": "A5.themes.add('Alpha-Magenta',{listbox: {pcs: {className: 'list',disabledClassName: 'listDisabled',focusClassName: 'listFocus',columnLayout: {header: {className: 'listColHeader',item: {className: 'listColHeaderItem',hoverClassName: 'listColHeaderItemHover',order: {ascendingImage: 'svgIcon=#alpha-icon-chevronUp:icon',descendingImage: 'svgIcon=#alpha-icon-chevronDown:icon',className: ''},resize: {location: 'after',className: 'listColHeaderItemResize',handle: {className: '',size: '14px'}}}},data: {item: {className: 'listItemData'}}},view: {navigation: {prev: {className: 'listNavButtonPrev',pressedClassName: 'listNavButtonPressed'},next: {className: 'listNavButtonNext',pressedClassName: 'listNavButtonPressed'}}},group: {navigator: {location: 'right',offset: 4,size: 28,className: 'listNav',focusClassName: ''}},header: {className: 'listHeader'},footer: {className: 'listFooter'},lock: {className: ''},content: {header: {className: ''},footer: {className: ''}},item: {className: 'listItem',hoverClassName: 'listItem',selectedClassName: 'listItem',titleClassName: 'listItemTitle',separatorClassName: 'listItemSep',parts: {mainClassName: 'listItemPartMain',subClassName: 'listItemPartSub',contextClassName: 'listItemPartContext',detailClassName: 'listItemPartDetail',contentClassName: 'listItemPartContent',icons: {navigate: 'svgIcon=#alpha-icon-chevronRight:icon',navigateSubtle: 'svgIcon=#alpha-icon-chevronRight:icon'}}}}}});",
+	"sass": ".listItem.padding = 0\r\n.listItem.offset = 0",
+	"js": "A5.themes.add('Alpha-Magenta',{listbox: {pcs: {className: 'list',disabledClassName: 'listDisabled',focusClassName: 'list',columnLayout: {header: {className: 'listColHeader',item: {className: 'listColHeaderItem',hoverClassName: 'listColHeaderItem',order: {ascendingImage: 'svgIcon=#alpha-icon-chevronUp:icon',descendingImage: 'svgIcon=#alpha-icon-chevronDown:icon',className: ''},resize: {location: 'after',className: 'listColHeaderItemResize',handle: {className: '',size: '15px'}}}},data: {item: {className: 'listItemData'}}},view: {navigation: {prev: {className: 'listNavButtonPrev',pressedClassName: 'listNavButtonPressed'},next: {className: 'listNavButtonNext',pressedClassName: 'listNavButtonPressed'}}},group: {navigator: {location: 'right',offset: 4,size: 28,className: 'listNav',focusClassName: ''}},header: {className: 'listHeader'},footer: {className: 'listFooter'},lock: {className: ''},content: {header: {className: ''},footer: {className: ''}},item: {className: 'listItem',hoverClassName: 'listItem',selectedClassName: 'listItem',titleClassName: 'listItem',separatorClassName: 'listItem',parts: {mainClassName: 'listItem',subClassName: 'listItem',contextClassName: 'listItem',detailClassName: 'listItem',contentClassName: 'listItem',icons: {navigate: 'svgIcon=#alpha-icon-chevronRight:icon',navigateSubtle: 'svgIcon=#alpha-icon-chevronRight:icon'}}}}}});",
 	"subthemes": {
 		"listbox": {
 			"pcs": {
 				"className": "list",
 				"disabledClassName": "listDisabled",
-				"focusClassName": "listFocus",
+				"focusClassName": "list",
 				"columnLayout": {
 					"header": {
 						"className": "listColHeader",
 						"item": {
 							"className": "listColHeaderItem",
-							"hoverClassName": "listColHeaderItemHover",
+							"hoverClassName": "listColHeaderItem",
 							"order": {
 								"ascendingImage": "svgIcon=#alpha-icon-chevronUp:icon",
 								"descendingImage": "svgIcon=#alpha-icon-chevronDown:icon",
@@ -94,7 +94,7 @@
 								"className": "listColHeaderItemResize",
 								"handle": {
 									"className": "",
-									"size": "14px"
+									"size": "15px"
 								}
 							}
 						}
@@ -147,14 +147,14 @@
 					"className": "listItem",
 					"hoverClassName": "listItem",
 					"selectedClassName": "listItem",
-					"titleClassName": "listItemTitle",
-					"separatorClassName": "listItemSep",
+					"titleClassName": "listItem",
+					"separatorClassName": "listItem",
 					"parts": {
-						"mainClassName": "listItemPartMain",
-						"subClassName": "listItemPartSub",
-						"contextClassName": "listItemPartContext",
-						"detailClassName": "listItemPartDetail",
-						"contentClassName": "listItemPartContent",
+						"mainClassName": "listItem",
+						"subClassName": "listItem",
+						"contextClassName": "listItem",
+						"detailClassName": "listItem",
+						"contentClassName": "listItem",
 						"icons": {
 							"navigate": "svgIcon=#alpha-icon-chevronRight:icon",
 							"navigateSubtle": "svgIcon=#alpha-icon-chevronRight:icon"

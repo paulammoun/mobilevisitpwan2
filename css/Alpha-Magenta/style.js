@@ -967,13 +967,13 @@ A5.themes.add('Alpha-Magenta',{
 		"pcs": {
 			"className": "list",
 			"disabledClassName": "listDisabled",
-			"focusClassName": "listFocus",
+			"focusClassName": "list",
 			"columnLayout": {
 				"header": {
 					"className": "listColHeader",
 					"item": {
 						"className": "listColHeaderItem",
-						"hoverClassName": "listColHeaderItemHover",
+						"hoverClassName": "listColHeaderItem",
 						"order": {
 							"ascendingImage": "svgIcon=#alpha-icon-chevronUp:icon",
 							"descendingImage": "svgIcon=#alpha-icon-chevronDown:icon",
@@ -984,7 +984,7 @@ A5.themes.add('Alpha-Magenta',{
 							"className": "listColHeaderItemResize",
 							"handle": {
 								"className": "",
-								"size": "14px"
+								"size": "15px"
 							}
 						}
 					}
@@ -1037,14 +1037,14 @@ A5.themes.add('Alpha-Magenta',{
 				"className": "listItem",
 				"hoverClassName": "listItem",
 				"selectedClassName": "listItem",
-				"titleClassName": "listItemTitle",
-				"separatorClassName": "listItemSep",
+				"titleClassName": "listItem",
+				"separatorClassName": "listItem",
 				"parts": {
-					"mainClassName": "listItemPartMain",
-					"subClassName": "listItemPartSub",
-					"contextClassName": "listItemPartContext",
-					"detailClassName": "listItemPartDetail",
-					"contentClassName": "listItemPartContent",
+					"mainClassName": "listItem",
+					"subClassName": "listItem",
+					"contextClassName": "listItem",
+					"detailClassName": "listItem",
+					"contentClassName": "listItem",
 					"icons": {
 						"navigate": "svgIcon=#alpha-icon-chevronRight:icon",
 						"navigateSubtle": "svgIcon=#alpha-icon-chevronRight:icon"
