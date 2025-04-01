@@ -2841,7 +2841,7 @@ if(typeof DLG1_DlgObj == 'object') {
 		html: '<div style="display:none;"></div>'
 	},
 	footer: {
-		html: '<div style="display:table; margin:auto;"><div class="A5CWLayout" style="width: " >  <div id="DLG1.V.R1.STATICTEXT_8" title=""  class="" style="font-size: 7pt; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;"   ><strong>Copyright 2019-2025 PCS  Version 1.3.0 (build  35)</strong></div> </div> </div>',
+		html: '<div style="display:table; margin:auto;"><div class="A5CWLayout" style="width: " >  <div id="DLG1.V.R1.STATICTEXT_8" title=""  class="" style="font-size: 7pt; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;"   ><strong>Copyright 2019-2025 PCS  Version 1.3.0 (build  36)</strong></div> </div> </div>',
 		show: true
 	},
 	overlay: {
@@ -36404,7 +36404,7 @@ DLG1_DlgObj._listSystemOnClick('LSTITEMS',this.selection[0]);
 			'<div style="all: unset; ',
 			'            display: table; ',
 			'            width: 97%; ',
-			'            padding: 10px; ',
+			'            padding: 2px; ',
 			'            margin: 0 auto; ',
 			'            border-bottom: 2px solid red !important;">',
 			'',
@@ -36417,25 +36417,22 @@ DLG1_DlgObj._listSystemOnClick('LSTITEMS',this.selection[0]);
 			'        <span a5-item="_a5FieldEvent:description" ><span id="DLG1.LSTITEMS.DESCRIPTION.I.{*dataRow}">{description}</span></span>',
 			'        </div>',
 			'    </div>',
-			'<div style="display: table; width: 97%; padding: 1px; margin-left: auto; margin-right: auto;">',
-			'    <div style="display: table-cell; vertical-align: middle; text-align: center; width: 50%; font-size: 14px;">',
+			'<div style="display: table; width: 97%; padding: 1px; margin-left: auto; margin-right: auto;padding: 0px !important;">',
+			'    <div style="display: table-cell; vertical-align: middle; text-align: center; width: 50%; font-size: 14px; padding: 0px !important;">',
 			'        <b>Qty:</b><br>',
-			'        <span id="DLG1.LSTITEMS.MINUS.I.{*dataRow}"><button  a5-item="_systemButtononClick_minus"  id="DLG1.LSTITEMS.MINUS.BTN.{*dataRow}"  class="[class.dialogButton]" style="cursor:pointer;" title="">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-removeRounded:icon,24{ fill: #f81a1a;}\'>>)}</button></span>',
-			'        <span style="margin: 0 0px; padding: 0 7px; border: 1px solid #ccc; display: inline-block;">',
+			'        <span id="DLG1.LSTITEMS.MINUS.I.{*dataRow}"><button  a5-item="_systemButtononClick_minus"  id="DLG1.LSTITEMS.MINUS.BTN.{*dataRow}"  class="[class.dialogButton]" style="padding: 0px; cursor: pointer; " title="">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-removeRounded:icon,24{ fill: #f81a1a;}\'>>)}</button></span>',
+			'        <span style="margin: 0 0px; padding: 3px 12px; border: 1px solid #ccc; display: inline-block;">',
 			'            <span a5-item="_a5FieldEvent:qty" ><span id="DLG1.LSTITEMS.QTY.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 0px; display: inline-block; width: 65px"><input \ta5-on-change="qty" \ta5-on-blur="qty" \ta5-on-focus="qty" \ta5-on-keypress="qty" \ta5-on-keyup="qty" \ta5-on-keydown="qty" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="qty" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].qty:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.QTY.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'qty\')}</div>{*else}{qty}{*endif}</span></span>',
 			'        </span> ',
-			'        <span id="DLG1.LSTITEMS.PLUS.I.{*dataRow}"><button  a5-item="_systemButtononClick_plus"  id="DLG1.LSTITEMS.PLUS.BTN.{*dataRow}"  class="[class.dialogButton]" style="cursor:pointer;" title="">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-addCircle:icon,24\'>>)}</button></span>',
-			'',
-			'            ',
-			'',
+			'        <span id="DLG1.LSTITEMS.PLUS.I.{*dataRow}"><button  a5-item="_systemButtononClick_plus"  id="DLG1.LSTITEMS.PLUS.BTN.{*dataRow}"  class="[class.dialogButton]" style="padding: 0px; cursor: pointer; " title="">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-addCircle:icon,24\'>>)}</button></span>    ',
 			'    </div>',
 			'',
-			'    <div style="display: table-cell; vertical-align: middle; text-align: center; width: 50%; font-size: 14px;">',
+			'    <div style="display: table-cell; vertical-align: middle; text-align: center; width: 50%; font-size: 14px; padding 0px !important;">',
 			'        <b>Bonus:</b><br>',
-			'        <span id="DLG1.LSTITEMS.MINUSB.I.{*dataRow}"><button  a5-item="_systemButtononClick_minusb"  id="DLG1.LSTITEMS.MINUSB.BTN.{*dataRow}"  class="[class.dialogButton]" style="cursor:pointer;" title="">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-removeRounded:icon,24{ fill: #f81a1a;}\'>>)}</button></span> ',
-			'        <span style="margin: 0 0px; padding: 0 7px; border: 1px solid #ccc; display: inline-block;">',
+			'        <span id="DLG1.LSTITEMS.MINUSB.I.{*dataRow}"><button  a5-item="_systemButtononClick_minusb"  id="DLG1.LSTITEMS.MINUSB.BTN.{*dataRow}"  class="[class.dialogButton]" style="padding: 0px; cursor: pointer; " title="">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-removeRounded:icon,24{ fill: #f81a1a;}\'>>)}</button></span> ',
+			'        <span style="margin: 0 0px;padding: 3px 12px; border: 1px solid #ccc; display: inline-block;padding 0px !important;">',
 			'        <span a5-item="_a5FieldEvent:bonus" ><span id="DLG1.LSTITEMS.BONUS.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 0px; display: inline-block; width: 65px"><input \ta5-on-change="bonus" \ta5-on-blur="bonus" \ta5-on-focus="bonus" \ta5-on-keypress="bonus" \ta5-on-keyup="bonus" \ta5-on-keydown="bonus" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="bonus" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].bonus:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.BONUS.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'bonus\')}</div>{*else}{bonus}{*endif}</span></span></span> ',
-			'        <span id="DLG1.LSTITEMS.PLUSB.I.{*dataRow}"><button  a5-item="_systemButtononClick_plusb"  id="DLG1.LSTITEMS.PLUSB.BTN.{*dataRow}"  class="[class.dialogButton]" style="cursor:pointer;" title="">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-addCircle:icon,24\'>>)}</button></span>',
+			'        <span id="DLG1.LSTITEMS.PLUSB.I.{*dataRow}"><button  a5-item="_systemButtononClick_plusb"  id="DLG1.LSTITEMS.PLUSB.BTN.{*dataRow}"  class="[class.dialogButton]" style="padding: 0px; cursor: pointer; " title="">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-addCircle:icon,24\'>>)}</button></span>',
 			'    </div>',
 			'</div>',
 			'',
@@ -36529,7 +36526,7 @@ DLG1_DlgObj._listSystemOnClick('LSTITEMS',this.selection[0]);
 			'\t</div>',
 			'\t\t\t',
 			'\t<div style="display: table-cell; width: 60px; text-align: left; vertical-align: top;">\t',
-			'        <span id="DLG1.LSTITEMS.EDIT.I.{*dataRow}"><button  a5-item="_systemButtononClick_Edit"  id="DLG1.LSTITEMS.EDIT.BTN.{*dataRow}"  class="[class.dialogButton]" style="cursor:pointer;" title="">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-docEditSolid:icon,200{ fill: #f14242;}\'>>)}</button></span>',
+			'        <span id="DLG1.LSTITEMS.EDIT.I.{*dataRow}"><button  a5-item="_systemButtononClick_Edit"  id="DLG1.LSTITEMS.EDIT.BTN.{*dataRow}"  class="[class.dialogButton]" style="padding: 0px; cursor: pointer; " title="">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-docEditSolid:icon,200{ fill: #f14242;}\'>>)}</button></span>',
 			'\t</div>',
 			'\t',
 			'</div>']
@@ -36561,7 +36558,7 @@ DLG1_DlgObj._listSystemOnClick('LSTITEMS',this.selection[0]);
 			'\t</div>',
 			'\t\t\t',
 			'\t<div style="display: table-cell; width: 60px; text-align: left; vertical-align: top;">\t',
-			'        <span id="DLG1.LSTITEMS.EDIT.I.{*dataRow}"><button  a5-item="_systemButtononClick_Edit"  id="DLG1.LSTITEMS.EDIT.BTN.{*dataRow}"  class="[class.dialogButton]" style="cursor:pointer;" title="">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-docEditSolid:icon,200{ fill: #f14242;}\'>>)}</button></span>',
+			'        <span id="DLG1.LSTITEMS.EDIT.I.{*dataRow}"><button  a5-item="_systemButtononClick_Edit"  id="DLG1.LSTITEMS.EDIT.BTN.{*dataRow}"  class="[class.dialogButton]" style="padding: 0px; cursor: pointer; " title="">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-docEditSolid:icon,200{ fill: #f14242;}\'>>)}</button></span>',
 			'\t</div>',
 			'\t',
 			'</div>']
@@ -37684,9 +37681,9 @@ function sf(){
 				}
 },
 '_systemButtononClick_plus' : {
-	"selectable": true,
+	"selectable": false,
 	"onClick": function(index,v,args) { 					var data = this._data[this._dataMap[index]];
-					(function(rowNumber,value,ia,data,lObj,listObj) { var listObj = DLG1_DlgObj.getControl('LSTITEMS');
+					(function(rowNumber,value,ia,data,lObj,listObj) { listObj.setValue(rowNumber,false);var listObj = DLG1_DlgObj.getControl('LSTITEMS');
     var rowNum = rowNumber
     if (rowNum !== -1) {
      console.log('here');
@@ -71201,7 +71198,7 @@ DLG1_DlgObj.__info = {
 	"dateCreated": "2018-10-14",
 	"dateLastEdited": "2025-4-1",
 	"comments": "",
-	"revisionnumber": 2106
+	"revisionnumber": 2109
 }
 A5.__csdfmt = (obj) =>{ if(obj) return obj.stateInfo.__dtfmt};DLG1_DlgObj._workingPreview = false;
 $u.decimal = '.';
@@ -76049,11 +76046,14 @@ A5.__flagIIS = false;
 A5.__flagSimulateIIS = true;
 </script>
 <script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/mobilevisitpwan2/sw.js', { scope: '/mobilevisitpwan2/' })
-      .then(reg => console.log('✅ Service worker registered:', reg.scope))
-      .catch(err => console.error('❌ Service worker registration failed:', err));
-  }
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js',{scope: './'})
+        .then(function() {
+         console.log('** Alpha PWA service worker registered');
+    	});
+    } else {
+        console.log('** serviceWorker object not available.');
+    }
 </script>
 
 </body>
