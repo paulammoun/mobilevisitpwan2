@@ -45,7 +45,7 @@
         "type": "image/png"
       }
     ],
-    "start_url": "./index.html",
+    "start_url": "mobilevisitpwan2/index.html",
     "display": "standalone",
     "background_color": "#47dde6",
     "theme_color": "#ee6060"
