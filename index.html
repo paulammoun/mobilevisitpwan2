@@ -226,6 +226,23 @@ iframe {-webkit-user-select: text;}
   border: 1px solid #eee;
   margin: 10px;
   flex: 1 auto; }
+.field-box {
+  border: 1px solid #ccc;
+  /* Optional: adds a light gray border */
+  width: 80px;
+  height: 30px;
+  box-sizing: border-box;
+  /* Ensures padding/border stay within the 80x30 */ }
+.qty-bonus-display {
+  display: inline-block;
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  box-sizing: border-box; }
 .listItemHover,
 .listItemSelected,
 .listFocus {
@@ -368,6 +385,18 @@ iframe {-webkit-user-select: text;}
   border: 1px solid #eee;
   margin: 10px;
   flex: 1 auto; }
+.DLG1_LSTITEMS_2 .qty-bonus-display {
+  all: unset !important;
+  display: inline-block !important;
+  width: 70px !important;
+  height: 30px !important;
+  line-height: 30px !important;
+  text-align: center !important;
+  vertical-align: center !important;
+  border: 1px solid #ccc !important;
+  font-size: 14px !important;
+  background-color: #f9f9f9 !important;
+  box-sizing: border-box !important; }
 ._DLG1_LSTVISITHEAD_dirtyRow {
   position: relative; }
 ._DLG1_LSTVISITHEAD_dirtyRow:before {
@@ -2841,7 +2870,7 @@ if(typeof DLG1_DlgObj == 'object') {
 		html: '<div style="display:none;"></div>'
 	},
 	footer: {
-		html: '<div style="display:table; margin:auto;"><div class="A5CWLayout" style="width: " >  <div id="DLG1.V.R1.STATICTEXT_8" title=""  class="" style="font-size: 7pt; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;"   ><strong>Copyright 2019-2025 PCS  Version 1.3.0 (build  36)</strong></div> </div> </div>',
+		html: '<div style="display:table; margin:auto;"><div class="A5CWLayout" style="width: " >  <div id="DLG1.V.R1.STATICTEXT_8" title=""  class="" style="font-size: 7pt; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;"   ><strong>Copyright 2019-2025 PCS  Version 1.3.0 (build  37)</strong></div> </div> </div>',
 		show: true
 	},
 	overlay: {
@@ -16455,7 +16484,7 @@ DLG1_DlgObj.getControl('LSTVISITHEAD')._populateMyChildren();},
 	},
 	_detailViewGlobalErrorStyle: 'font-family: Arial; font-size: 10pt; color: red; border: solid 1px red; width: 100%;',
 	_autoCommitDetailView: true,
-	_synchBatchSize: 1,
+	_synchBatchSize: 0,
 	_resetMediaFileUploadErrorsFlag: function(data) {
 var r = A5.u.object.each(data,function(name,value,path,result){
 	if(name == '_flagMediaFileUploadError') {
@@ -34506,14 +34535,14 @@ $(this).value = mBonusQ;}
 setTimeout(function() { 
 	var rowNumber = dIndx;
 	var ele = $('LSTITEMS.'+rowNumber+'.QTY.CONTROL');
-	if(ele) $ss(ele,'text-align: right; box-sizing: border-box; width: 100%;');
+	if(ele) $ss(ele,'text-align: right; box-sizing: border-box; width: 80px; height: 30px;');
 },0)
 },
 				bonus: function(rowNumber,data,listObj) { var renderIndex = data['*renderIndex'];
 setTimeout(function() { 
 	var rowNumber = dIndx;
 	var ele = $('LSTITEMS.'+rowNumber+'.BONUS.CONTROL');
-	if(ele) $ss(ele,'text-align: right; box-sizing: border-box; width: 100%;');
+	if(ele) $ss(ele,'text-align: right; box-sizing: border-box; width: 80px; height: 30px;');
 },0)
 }
 			}
@@ -36392,7 +36421,7 @@ DLG1_DlgObj._listSystemOnClick('LSTITEMS',this.selection[0]);
 			},
 			type: 'template',
 			item: {
-				height: '190px',
+				height: '',
 				className: 'listItem',
 				hoverClassName: 'listItem',
 				selectedClassName: 'listItem',
@@ -36417,23 +36446,22 @@ DLG1_DlgObj._listSystemOnClick('LSTITEMS',this.selection[0]);
 			'        <span a5-item="_a5FieldEvent:description" ><span id="DLG1.LSTITEMS.DESCRIPTION.I.{*dataRow}">{description}</span></span>',
 			'        </div>',
 			'    </div>',
-			'<div style="display: table; width: 97%; padding: 1px; margin-left: auto; margin-right: auto;padding: 0px !important;">',
-			'    <div style="display: table-cell; vertical-align: middle; text-align: center; width: 50%; font-size: 14px; padding: 0px !important;">',
+			'<div style="display: flex; justify-content: space-between; width: 97%; margin: auto; font-size: 14px;">',
+			'    ',
+			'    <div style="flex: 1; text-align: center;">',
 			'        <b>Qty:</b><br>',
 			'        <span id="DLG1.LSTITEMS.MINUS.I.{*dataRow}"><button  a5-item="_systemButtononClick_minus"  id="DLG1.LSTITEMS.MINUS.BTN.{*dataRow}"  class="[class.dialogButton]" style="padding: 0px; cursor: pointer; " title="">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-removeRounded:icon,24{ fill: #f81a1a;}\'>>)}</button></span>',
-			'        <span style="margin: 0 0px; padding: 3px 12px; border: 1px solid #ccc; display: inline-block;">',
-			'            <span a5-item="_a5FieldEvent:qty" ><span id="DLG1.LSTITEMS.QTY.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 0px; display: inline-block; width: 65px"><input \ta5-on-change="qty" \ta5-on-blur="qty" \ta5-on-focus="qty" \ta5-on-keypress="qty" \ta5-on-keyup="qty" \ta5-on-keydown="qty" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="qty" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].qty:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.QTY.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'qty\')}</div>{*else}{qty}{*endif}</span></span>',
-			'        </span> ',
-			'        <span id="DLG1.LSTITEMS.PLUS.I.{*dataRow}"><button  a5-item="_systemButtononClick_plus"  id="DLG1.LSTITEMS.PLUS.BTN.{*dataRow}"  class="[class.dialogButton]" style="padding: 0px; cursor: pointer; " title="">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-addCircle:icon,24\'>>)}</button></span>    ',
+			'        <span a5-item="_a5FieldEvent:qty" ><span class="qty-bonus-display" style=""><span id="DLG1.LSTITEMS.QTY.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 3px; padding-left: 0px;"><input \ta5-on-change="qty" \ta5-on-blur="qty" \ta5-on-focus="qty" \ta5-on-keypress="qty" \ta5-on-keyup="qty" \ta5-on-keydown="qty" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="qty" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].qty:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.QTY.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'qty\')}</div>{*else}{qty}{*endif}</span></span></span>',
+			'        <span id="DLG1.LSTITEMS.PLUS.I.{*dataRow}"><button  a5-item="_systemButtononClick_plus"  id="DLG1.LSTITEMS.PLUS.BTN.{*dataRow}"  class="[class.dialogButton]" style="padding: 0px; cursor: pointer; " title="">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-addCircle:icon,24\'>>)}</button></span>',
 			'    </div>',
 			'',
-			'    <div style="display: table-cell; vertical-align: middle; text-align: center; width: 50%; font-size: 14px; padding 0px !important;">',
+			'    <div style="flex: 1; text-align: center;">',
 			'        <b>Bonus:</b><br>',
-			'        <span id="DLG1.LSTITEMS.MINUSB.I.{*dataRow}"><button  a5-item="_systemButtononClick_minusb"  id="DLG1.LSTITEMS.MINUSB.BTN.{*dataRow}"  class="[class.dialogButton]" style="padding: 0px; cursor: pointer; " title="">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-removeRounded:icon,24{ fill: #f81a1a;}\'>>)}</button></span> ',
-			'        <span style="margin: 0 0px;padding: 3px 12px; border: 1px solid #ccc; display: inline-block;padding 0px !important;">',
-			'        <span a5-item="_a5FieldEvent:bonus" ><span id="DLG1.LSTITEMS.BONUS.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 0px; display: inline-block; width: 65px"><input \ta5-on-change="bonus" \ta5-on-blur="bonus" \ta5-on-focus="bonus" \ta5-on-keypress="bonus" \ta5-on-keyup="bonus" \ta5-on-keydown="bonus" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="bonus" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].bonus:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.BONUS.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'bonus\')}</div>{*else}{bonus}{*endif}</span></span></span> ',
+			'        <span id="DLG1.LSTITEMS.MINUSB.I.{*dataRow}"><button  a5-item="_systemButtononClick_minusb"  id="DLG1.LSTITEMS.MINUSB.BTN.{*dataRow}"  class="[class.dialogButton]" style="padding: 0px; cursor: pointer; " title="">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-removeRounded:icon,24{ fill: #f81a1a;}\'>>)}</button></span>',
+			'        <span a5-item="_a5FieldEvent:bonus" ><span class="qty-bonus-display" style=""><span id="DLG1.LSTITEMS.BONUS.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 3px; padding-left: 0px;"><input \ta5-on-change="bonus" \ta5-on-blur="bonus" \ta5-on-focus="bonus" \ta5-on-keypress="bonus" \ta5-on-keyup="bonus" \ta5-on-keydown="bonus" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="bonus" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].bonus:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.BONUS.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'bonus\')}</div>{*else}{bonus}{*endif}</span></span></span>',
 			'        <span id="DLG1.LSTITEMS.PLUSB.I.{*dataRow}"><button  a5-item="_systemButtononClick_plusb"  id="DLG1.LSTITEMS.PLUSB.BTN.{*dataRow}"  class="[class.dialogButton]" style="padding: 0px; cursor: pointer; " title="">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-addCircle:icon,24\'>>)}</button></span>',
 			'    </div>',
+			'',
 			'</div>',
 			'',
 			'<div style="display: table; width: 100%; padding: 1px; margin-left: auto; margin-right: auto;">',
@@ -36519,7 +36547,7 @@ DLG1_DlgObj._listSystemOnClick('LSTITEMS',this.selection[0]);
 			template: [
 			'<div style="display: table; width: 100%;">',
 			'\t<div style="display: table-cell;">',
-			'\t\t<div class="[theme:listBox.base.item.parts.mainClassName|Alpha-MagentaListItemLabelMain]" style="float: right;"><span a5-item="_a5FieldEvent:qty" ><span id="DLG1.LSTITEMS.QTY.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 0px; display: inline-block; width: 65px"><input \ta5-on-change="qty" \ta5-on-blur="qty" \ta5-on-focus="qty" \ta5-on-keypress="qty" \ta5-on-keyup="qty" \ta5-on-keydown="qty" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="qty" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].qty:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.QTY.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'qty\')}</div>{*else}{qty}{*endif}</span></span></div>',
+			'\t\t<div class="[theme:listBox.base.item.parts.mainClassName|Alpha-MagentaListItemLabelMain]" style="float: right;"><span a5-item="_a5FieldEvent:qty" ><span class="qty-bonus-display" style=""><span id="DLG1.LSTITEMS.QTY.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 3px; padding-left: 0px;"><input \ta5-on-change="qty" \ta5-on-blur="qty" \ta5-on-focus="qty" \ta5-on-keypress="qty" \ta5-on-keyup="qty" \ta5-on-keydown="qty" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="qty" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].qty:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.QTY.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'qty\')}</div>{*else}{qty}{*endif}</span></span></span></div>',
 			'        <span a5-item="_a5FieldEvent:custid" ><span id="DLG1.LSTITEMS.CUSTID.I.{*dataRow}">{custid}</span></span>',
 			'\t\t<div class="[theme:listBox.base.item.parts.mainClassName|Alpha-MagentaListItemLabelMain]"><span a5-item="_a5FieldEvent:description" ><span id="DLG1.LSTITEMS.DESCRIPTION.I.{*dataRow}">{description}</span></span></div>',
 			'\t\t<div class="[theme:listBox.base.item.parts.subClassName|Alpha-MagentaListItemLabelSub]"><span a5-item="_a5FieldEvent:product_code" ><span id="DLG1.LSTITEMS.PRODUCT_CODE.I.{*dataRow}">{product_code}</span></span></div>',
@@ -71198,7 +71226,7 @@ DLG1_DlgObj.__info = {
 	"dateCreated": "2018-10-14",
 	"dateLastEdited": "2025-4-1",
 	"comments": "",
-	"revisionnumber": 2109
+	"revisionnumber": 2114
 }
 A5.__csdfmt = (obj) =>{ if(obj) return obj.stateInfo.__dtfmt};DLG1_DlgObj._workingPreview = false;
 $u.decimal = '.';
