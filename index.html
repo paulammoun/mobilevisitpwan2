@@ -1889,6 +1889,7 @@ if(!ele2) {
 <input type="hidden" id="DLG1.V.R1.LSTMEDIALFILES" name="V.R1.LSTMEDIALFILES" />
 <input type="hidden" id="DLG1.V.R1.LSTBASKETH" name="V.R1.LSTBASKETH" />
 <input type="hidden" id="DLG1.V.R1.LSTBASKETDET" name="V.R1.LSTBASKETDET" />
+<input type="hidden" id="DLG1.V.R1.LSTITEMS" name="V.R1.LSTITEMS" />
 <input type="hidden" id="DLG1.V.R1.LSTVACATION" name="V.R1.LSTVACATION" />
 <input type="hidden" id="DLG1.V.R1.LSTGEOLOC" name="V.R1.LSTGEOLOC" />
 <input type="hidden" id="DLG1.V.R1.BASKETNUM" name="V.R1.BASKETNUM" />
@@ -4610,7 +4611,7 @@ if(typeof DLG1_DlgObj != 'undefined' && DLG1_DlgObj != null && typeof DLG1_DlgOb
 	body: {
 		content: {
 			type: 'html',
-			src: '\r\n<div class="A5floatClear"></div>'
+			src: '<div class="A5CWLayout" style="width: 100%" >\r\n <label id="DLG1.LBL.R1.LSTITEMS" for="DLG1.V.R1.LSTITEMS" title="" class="label" style="display:block;">LSTITEMS</label>\r\n\r\n \r\n<div   style="padding:0px; "  >\r\n <div id="DLG1.V.R1.LSTITEMS.CONTROL"  class="DLG1_LSTITEMS" style="overflow: auto; width: 100%; height: 3in; "></div>\r\n</div>\r\n\r\n</div>\r\n<div class="A5floatClear"></div>'
 		},
 		scroll: {
 			axis: 'both',
@@ -34820,7 +34821,7 @@ setTimeout(function(){
  console.log(select);
  console.log(rowNumber);
  if (select) {
-   select.style.setProperty('padding', '0', 'important');
+   select.style.setProperty('padding-top', '0', 'important');
    console.log('Padding removed on select');
  } else {
    console.warn('Select not found');
@@ -71644,7 +71645,7 @@ DLG1_DlgObj.__info = {
 	"dateCreated": "2018-10-14",
 	"dateLastEdited": "2025-4-11",
 	"comments": "",
-	"revisionnumber": 2165
+	"revisionnumber": 2166
 }
 A5.__csdfmt = (obj) =>{ if(obj) return obj.stateInfo.__dtfmt};DLG1_DlgObj._workingPreview = false;
 $u.decimal = '.';
