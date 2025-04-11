@@ -243,6 +243,87 @@ iframe {-webkit-user-select: text;}
   font-size: 14px;
   background-color: #f9f9f9;
   box-sizing: border-box; }
+.qty-bonus-display {
+  all: unset !important;
+  display: inline-block !important;
+  width: 70px !important;
+  height: 30px !important;
+  line-height: 30px !important;
+  text-align: center !important;
+  vertical-align: center !important;
+  border: 1px solid #ccc !important;
+  font-size: 14px !important;
+  background-color: #f9f9f9 !important;
+  box-sizing: border-box !important;
+  padding-top: 0pc; }
+.list-item {
+  width: 100%;
+  max-width: 100%;
+  border-bottom: 2px solid red;
+  padding: 10px;
+  font-size: 14px;
+  box-sizing: border-box; }
+.product-header {
+  display: flex;
+  max-width: 100%;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-weight: bold; }
+.product-code {
+  width: 30%;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+.description {
+  max-width: 100%;
+  width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+.product-breakdown {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px; }
+.section {
+  flex-direction: column;
+  gap: 5px;
+  max-width: 100%;
+  width: 20%;
+  text-align: right; }
+.section.center {
+  text-align: left;
+  max-width: 100%;
+  width: 25%; }
+.section.right {
+  text-align: left;
+  max-width: 100%;
+  width: 30%; }
+.section.save {
+  text-align: left;
+  max-width: 100%;
+  width: 25%; }
+.title {
+  font-size: 12px;
+  font-weight: bold;
+  color: #000;
+  max-width: 100%; }
+.value {
+  font-size: 14px; }
+.label {
+  padding-top: 10px;
+  max-width: 100%; }
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  max-width: 100%; }
+.footer-item {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  max-width: 100%; }
 .listItem {
   background: none !important;
   color: inherit !important;
@@ -386,7 +467,8 @@ iframe {-webkit-user-select: text;}
   border: 1px solid #ccc !important;
   font-size: 14px !important;
   background-color: #f9f9f9 !important;
-  box-sizing: border-box !important; }
+  box-sizing: border-box !important;
+  padding-top: 0pc; }
 .DLG1_LSTITEMS_2 .list-item {
   width: 100%;
   max-width: 100%;
@@ -418,20 +500,22 @@ iframe {-webkit-user-select: text;}
   justify-content: space-between;
   margin-bottom: 10px; }
 .DLG1_LSTITEMS_2 .section {
-  flex: 1;
-  display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 5px;
-  max-width: 100%; }
+  max-width: 100%;
+  width: 20%;
+  text-align: right; }
 .DLG1_LSTITEMS_2 .section.center {
-  align-items: center;
-  text-align: center;
-  max-width: 100%; }
+  text-align: left;
+  max-width: 100%;
+  width: 25%; }
 .DLG1_LSTITEMS_2 .section.right {
-  align-items: flex-end;
-  text-align: right;
-  max-width: 100%; }
+  text-align: left;
+  max-width: 100%;
+  width: 30%; }
+.DLG1_LSTITEMS_2 .section.save {
+  text-align: left;
+  max-width: 100%;
+  width: 25%; }
 .DLG1_LSTITEMS_2 .title {
   font-size: 12px;
   font-weight: bold;
@@ -448,7 +532,7 @@ iframe {-webkit-user-select: text;}
   font-weight: bold;
   max-width: 100%; }
 .DLG1_LSTITEMS_2 .footer-item {
-  display: flex;
+  display: block;
   justify-content: space-between;
   font-weight: bold;
   max-width: 100%; }
@@ -1805,7 +1889,6 @@ if(!ele2) {
 <input type="hidden" id="DLG1.V.R1.LSTMEDIALFILES" name="V.R1.LSTMEDIALFILES" />
 <input type="hidden" id="DLG1.V.R1.LSTBASKETH" name="V.R1.LSTBASKETH" />
 <input type="hidden" id="DLG1.V.R1.LSTBASKETDET" name="V.R1.LSTBASKETDET" />
-<input type="hidden" id="DLG1.V.R1.LSTITEMS" name="V.R1.LSTITEMS" />
 <input type="hidden" id="DLG1.V.R1.LSTVACATION" name="V.R1.LSTVACATION" />
 <input type="hidden" id="DLG1.V.R1.LSTGEOLOC" name="V.R1.LSTGEOLOC" />
 <input type="hidden" id="DLG1.V.R1.BASKETNUM" name="V.R1.BASKETNUM" />
@@ -4527,7 +4610,7 @@ if(typeof DLG1_DlgObj != 'undefined' && DLG1_DlgObj != null && typeof DLG1_DlgOb
 	body: {
 		content: {
 			type: 'html',
-			src: '<div class="A5CWLayout" style="width: 100%" >\r\n <label id="DLG1.LBL.R1.LSTITEMS" for="DLG1.V.R1.LSTITEMS" title="" class="label" style="display:block;">LSTITEMS</label>\r\n\r\n \r\n<div   style="padding:0px; "  >\r\n <div id="DLG1.V.R1.LSTITEMS.CONTROL"  class="DLG1_LSTITEMS" style="overflow: auto; width: 100%; height: 3in; "></div>\r\n</div>\r\n\r\n</div>\r\n<div class="A5floatClear"></div>'
+			src: '\r\n<div class="A5floatClear"></div>'
 		},
 		scroll: {
 			axis: 'both',
@@ -4591,7 +4674,14 @@ retdiscussed();
 DLG1_DlgObj.runAction('fillitemslist');
 DLG1_DlgObj.setValue('dropgroup',0);
 DLG1_DlgObj.setValue('dropsubgroup',0);
-DLG1_DlgObj.setValue('txtsearchdesc','');},
+DLG1_DlgObj.setValue('txtsearchdesc','');
+function _done(obj) {
+  console.log('units array');
+ DLG1_DlgObj._unitsarray =  obj.itemunits
+ console.log(DLG1_DlgObj._unitsarray);
+ console.log(DLG1_DlgObj);
+}
+DLG1_DlgObj.readDataCacheItems('itemunits',_done);},
 	onCreate: function() {
 }
 })
@@ -5494,7 +5584,7 @@ var DLG1_DlgObj = new A5.DialogComponentHelper('DLG1',{
 	"SPECIALREQUEST": "",
 	"COMENT": "",
 	"TEST1": "0",
-	"TEST2": "09/04/2025",
+	"TEST2": "11/04/2025",
 	"LSTVISITHEAD": "",
 	"DEVLAT": "",
 	"DEVLONG": "",
@@ -5667,7 +5757,7 @@ var DLG1_DlgObj = new A5.DialogComponentHelper('DLG1',{
 	"LSTGEOLOC": "",
 	"MEDREP": "Invalid expression: convert_number(\"\"+convert_type(a,\"N\"))",
 	"MEDREP_1": "Invalid expression: convert_number(\"\"+convert_type(a,\"N\"))",
-	"DATE": "09/04/2025",
+	"DATE": "11/04/2025",
 	"PASSOK": "0",
 	"SYNCINPROGRESS": "0",
 	"FAILEDSYNC": "0",
@@ -5710,7 +5800,7 @@ var DLG1_DlgObj = new A5.DialogComponentHelper('DLG1',{
 	"SPECIALREQUEST": "",
 	"COMENT": "",
 	"TEST1": "0",
-	"TEST2": "09/04/2025",
+	"TEST2": "11/04/2025",
 	"LSTVISITHEAD": "",
 	"DEVLAT": "",
 	"DEVLONG": "",
@@ -5883,7 +5973,7 @@ var DLG1_DlgObj = new A5.DialogComponentHelper('DLG1',{
 	"LSTGEOLOC": "",
 	"MEDREP": "Invalid expression: convert_number(\"\"+convert_type(a,\"N\"))",
 	"MEDREP_1": "Invalid expression: convert_number(\"\"+convert_type(a,\"N\"))",
-	"DATE": "09/04/2025",
+	"DATE": "11/04/2025",
 	"PASSOK": "0",
 	"SYNCINPROGRESS": "0",
 	"FAILEDSYNC": "0",
@@ -34681,7 +34771,18 @@ $(this).type = 'number';},
 $(this).select();
 $(this).type = 'number';
 var mBonusQ = DLG1_DlgObj.stateInfo['thebonusqt'];
-$(this).value = mBonusQ;}
+$(this).value = mBonusQ;},
+				sellunit: function(rowNumber,oldData,newData,listObj) { var renderIndex = oldData['*renderIndex'];
+const select = document.querySelector('#LSTITEMS\\.'+rowNumber+'\\.SELLUNIT\\.CONTROL');
+console.log(select);
+console.log(rowNumber);
+if (select) {
+  select.style.setProperty('padding', '0', 'important');
+  console.log('Padding removed on select');
+} else {
+  console.warn('Select not found');
+}
+}
 			},
 			onkeypress: {
 				qty: function(rowNumber,oldData,newData,listObj) { var renderIndex = oldData['*renderIndex'];
@@ -34712,7 +34813,31 @@ setTimeout(function() {
 	var ele = $('LSTITEMS.'+rowNumber+'.QTEINPACK.CONTROL');
 	if(ele) $ss(ele,'text-align: right; box-sizing: border-box; width: 75px; height: 30px; padding-right:5px;');
 },0)
-}
+},
+				sellunit: function(rowNumber,data,listObj) { var renderIndex = data['*renderIndex'];
+setTimeout(function(){
+ const select = document.querySelector('#LSTITEMS\\.'+rowNumber+'\\.SELLUNIT\\.CONTROL');
+ console.log(select);
+ console.log(rowNumber);
+ if (select) {
+   select.style.setProperty('padding', '0', 'important');
+   console.log('Padding removed on select');
+ } else {
+   console.warn('Select not found');
+ }
+ },150)},
+				bonusunit: function(rowNumber,data,listObj) { var renderIndex = data['*renderIndex'];
+setTimeout(function(){
+	const select = document.querySelector('#LSTITEMS\\.'+rowNumber+'\\.BONUSUNIT\\.CONTROL');
+	console.log(select);
+	console.log(rowNumber);
+	if (select) {
+	  select.style.setProperty('padding', '0', 'important');
+	  console.log('Padding removed on select');
+	} else {
+	  console.warn('Select not found');
+	}
+	},150)}
 			},
 			onblur: {
 				qteinpack: function(rowNumber,oldData,newData,listObj) { var renderIndex = oldData['*renderIndex'];
@@ -34728,10 +34853,10 @@ return;}
 	"type": "Javascript",
 	"windowwidth": "Default",
 	"windowheight": "200px",
-	"windowRowStyle": "padding-top:0px !important;",
+	"windowRowStyle": "",
 	"windowRowClass": "",
 	"windowHeadingClass": "",
-	"windowBodyStyle": "padding-top:0px !important;",
+	"windowBodyStyle": "",
 	"staticchoices": "",
 	"dynamictype": "DatabaseQuery",
 	"dynamic": {
@@ -34744,7 +34869,7 @@ return;}
 		"xbasicfunctionname": "",
 		"xbasicfunctiondefinition": "",
 		"javascriptfunctionname": "",
-		"javascript": "\r\nmarray = ['pcs','pack'];\r\nreturn marray;\r\n"
+		"javascript": "\r\n\r\nconsole.log(DLG1_DlgObj._unitsarray);\r\n\r\nvar mid = DLG1_DlgObj.getValue('list::LSTITEMS::id');\r\nvar mc = DLG1_DlgObj.getValue('list::LSTITEMS::product_code');\r\n\r\nvar r = lObj._pickerRow; // Assuming lObj is already defined\r\n\r\nconsole.log(DLG1_DlgObj);\r\n\r\nvar array = DLG1_DlgObj._unitsarray;\r\n\r\nif (!Array.isArray(array)) {\r\n    alert(\"Array is undefined or not an array.\");\r\n    return;\r\n}\r\n\r\nalert(array.length);\r\nalert(mid);\r\n\r\nvar a = [];\r\n\r\nfor (var i = 0; i < array.length; i++) {\r\n\tconsole.log(array[i].id);\r\n    if (array[i].item_id == mid) {\r\n        a.push(array[i].sellingunit); // Fixed syntax\r\n    }\r\n}\r\n\r\nreturn a;"
 	},
 	"userMustPickFromList": true,
 	"includeblankvalue": false,
@@ -34757,7 +34882,42 @@ return;}
 	"filter": "",
 	"order": "",
 	"userCanFilter": false,
-	"style": "padding-top:0px !important;"
+	"style": ""
+},
+				bonusunit: {
+	"type": "Static",
+	"windowwidth": "Default",
+	"windowheight": "200px",
+	"windowRowStyle": "",
+	"windowRowClass": "",
+	"windowHeadingClass": "",
+	"windowBodyStyle": "",
+	"staticchoices": "Pack\r\nUnit",
+	"dynamictype": "DatabaseQuery",
+	"dynamic": {
+		"connectionstring": "",
+		"tablename": "",
+		"fieldname": "",
+		"fieldsTodisplay": "",
+		"fillinfieldsmap": "",
+		"template": "",
+		"xbasicfunctionname": "",
+		"xbasicfunctiondefinition": "",
+		"javascriptfunctionname": "",
+		"javascript": ""
+	},
+	"userMustPickFromList": false,
+	"includeblankvalue": true,
+	"openListWhenClickOnControl": false,
+	"loaddatamethod": "AtRenderTime",
+	"allowdatacaching": true,
+	"loadingmessage": "Loading...",
+	"hasdynamicfilter": false,
+	"dynamicfilter": "",
+	"filter": "",
+	"order": "",
+	"userCanFilter": false,
+	"style": ""
 }
 			}
 		},
@@ -34953,6 +35113,9 @@ return '';},
 return '';},
 			bonusunit: function(rowNumber,data) {
 return '';}
+		},
+		choices: {
+			bonusunit: ['','Pack','Unit']
 		}
 	},
 	sortVirtualJavascript_wh4: function(data) {
@@ -36734,23 +36897,37 @@ DLG1_DlgObj._listSystemOnClick('LSTITEMS',this.selection[0]);},
 			'    <div class="section center">',
 			'      <div class="title">QTY</div>',
 			'      <div class="value"><span a5-item="_a5FieldEvent:qty" ><span class="qty-bonus-display" style=""><span id="DLG1.LSTITEMS.QTY.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 5px; padding-left: 0px;"><input \ta5-on-change="qty" \ta5-on-blur="qty" \ta5-on-focus="qty" \ta5-on-keypress="qty" \ta5-on-keyup="qty" \ta5-on-keydown="qty" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="qty" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].qty:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.QTY.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'qty\')}</div>{*else}{qty}{*endif}</span></span></span></div>',
-			'      <div class="value"><span a5-item="_a5FieldEvent:bonus" ><span class="qty-bonus-display" style=""><span id="DLG1.LSTITEMS.BONUS.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 3px; padding-left: 0px;"><input \ta5-on-change="bonus" \ta5-on-blur="bonus" \ta5-on-focus="bonus" \ta5-on-keypress="bonus" \ta5-on-keyup="bonus" \ta5-on-keydown="bonus" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="bonus" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].bonus:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.BONUS.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'bonus\')}</div>{*else}{bonus}{*endif}</span></span></span></div>',
+			'      <div class="value" style="margin-top: 5px"><span a5-item="_a5FieldEvent:bonus" ><span class="qty-bonus-display" style=""><span id="DLG1.LSTITEMS.BONUS.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 3px; padding-left: 0px;"><input \ta5-on-change="bonus" \ta5-on-blur="bonus" \ta5-on-focus="bonus" \ta5-on-keypress="bonus" \ta5-on-keyup="bonus" \ta5-on-keydown="bonus" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="bonus" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].bonus:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.BONUS.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'bonus\')}</div>{*else}{bonus}{*endif}</span></span></span></div>',
 			'    </div>',
 			'',
 			'    <!-- Second row: Unit selection -->',
 			'    <!-- If you need a dropdown, use a <select> element.',
 			'         Otherwise, if it’s just displaying the unit, you can use a regular div. -->',
-			'    <div class="section center">',
+			'    <div class="section right">',
 			'      <div class="title">UNIT</div>',
-			'      <div class="value"><span a5-item="_a5FieldEvent:sellunit" ><span class="qty-bonus-display" style="padding-top: 0px;"><span id="DLG1.LSTITEMS.SELLUNIT.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 10px; padding-left: 0px;"><table id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL.CONTAINER" cellspacing="0" cellpadding="0" class="[theme:editButtonGroup.base.container.className|Alpha-MagentaEditBG]" style="width: 100%; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;; display: inline-table; white-space:normal; "> <tr> <td style="width:100%"> \t<input   a5-item = "A5EDITNOOP" onchange = "DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); var rowNumber = {[temp].info.index}; <escape<var newData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.data[\'R\'+ rowNumber]; var oldData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._data[rowNumber]; try{ DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._inplaceEditing.events.onchange.sellunit.call(this,rowNumber,oldData,newData,DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']); }catch(e) {}  ;>>" oncontextmenu = "$e.stopPropagation(event)" a5-index="{[temp].info.index}" a5-on-blur="sellunit" a5-on-focus="sellunit" a5-on-keypress="sellunit" a5-on-keyup="sellunit" a5-on-keydown="sellunit"\tid="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL"   value="{[scope]._editing.data[\'R\'+[temp].info.index].sellunit:escape}"  ontouchstart="$e.stopPropagation(event);" a5-name="sellunit" a5-on-change="sellunit" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"    readonly="readonly"  autocomplete="off"   size="200" class="[theme:editButtonGroup.base.container.editClassName|class.editButtonGroupEdit]" style="width: 100%; ; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;" /> \t </td> \t\t<td id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROLBUTTON" a5-item="A5EDITCOMBO:sellunit"  style="width: 0%;"><span id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL.CUSTOMBUTTONSTATIC.0"><img src="[theme:general.icons.edit.dropdown|svgIcon=#alpha-icon-chevronDown:icon]" /></span></td> \t</tr> </table> {[scope]._editing.getError([scope],[temp].info.index,\'sellunit\')}</div>{*else}{sellunit}{*endif}</span></span></span></div>',
-			'      <div class="value"><span a5-item="_a5FieldEvent:bonusunit" ><span id="DLG1.LSTITEMS.BONUSUNIT.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 20px; display: inline-block; width: 80px"><input \ta5-on-change="bonusunit" \ta5-on-blur="bonusunit" \ta5-on-focus="bonusunit" \ta5-on-keypress="bonusunit" \ta5-on-keyup="bonusunit" \ta5-on-keydown="bonusunit" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="bonusunit" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].bonusunit:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'bonusunit\')}</div>{*else}{bonusunit}{*endif}</span></span></div>',
+			'      <div class="value"><span a5-item="_a5FieldEvent:sellunit" ><span class="qty-bonus-display" style=""><span id="DLG1.LSTITEMS.SELLUNIT.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 10px; padding-left: 0px;"><table id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL.CONTAINER" cellspacing="0" cellpadding="0" class="[theme:editButtonGroup.base.container.className|Alpha-MagentaEditBG]" style="width: 100%; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;; display: inline-table; white-space:normal; "> <tr> <td style="width:100%"> \t<input   a5-item = "A5EDITNOOP" onchange = "DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); var rowNumber = {[temp].info.index}; <escape<var newData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.data[\'R\'+ rowNumber]; var oldData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._data[rowNumber]; try{ DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._inplaceEditing.events.onchange.sellunit.call(this,rowNumber,oldData,newData,DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']); }catch(e) {}  ;>>" oncontextmenu = "$e.stopPropagation(event)" a5-index="{[temp].info.index}" a5-on-blur="sellunit" a5-on-focus="sellunit" a5-on-keypress="sellunit" a5-on-keyup="sellunit" a5-on-keydown="sellunit"\tid="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL"   value="{[scope]._editing.data[\'R\'+[temp].info.index].sellunit:escape}"  ontouchstart="$e.stopPropagation(event);" a5-name="sellunit" a5-on-change="sellunit" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"    readonly="readonly"  autocomplete="off"   size="200" class="[theme:editButtonGroup.base.container.editClassName|class.editButtonGroupEdit]" style="width: 100%; ; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;" /> \t </td> \t\t<td id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROLBUTTON" a5-item="A5EDITCOMBO:sellunit"  style="width: 0%;"><span id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL.CUSTOMBUTTONSTATIC.0"><img src="[theme:general.icons.edit.dropdown|svgIcon=#alpha-icon-chevronDown:icon]" /></span></td> \t</tr> </table> {[scope]._editing.getError([scope],[temp].info.index,\'sellunit\')}</div>{*else}{sellunit}{*endif}</span></span></span></div>',
+			'      <div class="value" style=\'margin-top: 5px\'><span a5-item="_a5FieldEvent:bonusunit" ><span class="qty-bonus-display" style=""><span id="DLG1.LSTITEMS.BONUSUNIT.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 10px; padding-left: 0px;"><table id="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL.CONTAINER" cellspacing="0" cellpadding="0" class="[theme:editButtonGroup.base.container.className|Alpha-MagentaEditBG]" style="width: 100%; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;; display: inline-table; white-space:normal; "> <tr> <td style="width:100%"> \t<input   a5-item = "A5EDITNOOP" onchange = "DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); var rowNumber = {[temp].info.index}; <escape<var newData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.data[\'R\'+ rowNumber]; var oldData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._data[rowNumber]; try{ DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._inplaceEditing.events.onchange.bonusunit.call(this,rowNumber,oldData,newData,DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']); }catch(e) {}  ;>>" oncontextmenu = "$e.stopPropagation(event)" a5-index="{[temp].info.index}" a5-on-blur="bonusunit" a5-on-focus="bonusunit" a5-on-keypress="bonusunit" a5-on-keyup="bonusunit" a5-on-keydown="bonusunit"\tid="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL"   value="{[scope]._editing.data[\'R\'+[temp].info.index].bonusunit:escape}"  ontouchstart="$e.stopPropagation(event);" a5-name="bonusunit" a5-on-change="bonusunit" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"    autocomplete="off"   size="200" class="[theme:editButtonGroup.base.container.editClassName|class.editButtonGroupEdit]" style="width: 100%; ; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;" /> \t </td> \t\t<td id="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROLBUTTON" a5-item="A5EDITCOMBO:bonusunit"  style="width: 0%;"><span id="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL.CUSTOMBUTTONSTATIC.0"><img src="[theme:general.icons.edit.dropdown|svgIcon=#alpha-icon-chevronDown:icon]" /></span></td> \t</tr> </table> {[scope]._editing.getError([scope],[temp].info.index,\'bonusunit\')}</div>{*else}{bonusunit}{*endif}</span></span></span></div>',
 			'    </div>',
+			'    <div class="section save">',
+			'        {*ensure __edit}',
+			'{*if __edit}',
+			'\t<span  title="Save edits">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-check:icon iconSizeable,44\'>>,\'a5-item="A5EDITSAVE"\')}</span>',
+			'\t<span  title="Cancel edits">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-x:icon iconSizeable,24\'>>,\'a5-item="A5EDITCANCEL"\')}</span>',
+			'{*else}',
+			'\t{*if [scope]._showInplaceEditEditRowIcon([temp].info.index,[root],[scope])}<span  title="Edit row">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-edit:icon iconSizeable,34\'>>,\'a5-item="A5EDIT"\')}</span>{*endif}',
+			'\t{*if [scope]._showInplaceEditAddRowIcon([temp].info.index,[root],[scope])}<span  title="Add new record">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-add:icon iconSizeable,24\'>>,\'a5-item="A5EDITADD"\')}</span>{*endif}',
+			'\t',
+			'{*endif}',
+			'',
+			'',
+			'    </div>',
+			'',
 			'  </div>',
 			'',
 			'  <div class="product-footer">',
 			'    <div class="footer-item" style="width: 35%">Unit Pr: <span a5-item="_a5FieldEvent:price" ><span id="DLG1.LSTITEMS.PRICE.I.{*dataRow}">{price}</span></span></div>',
 			'    <div class="footer-item" style="width: 25%">Disc.: <span a5-item="_a5FieldEvent:discount" ><span id="DLG1.LSTITEMS.DISCOUNT.I.{*dataRow}">{discount}</span></span></div>',
-			'    <div class="footer-item" style="width: 40%">>{*ensure __edit}',
+			'    <div class="footer-item" style="width: 40%">{*ensure __edit}',
 			'{*if __edit}',
 			'\t<input value="{[scope]._virtualJavascript[\'TOTLINE\']([temp].info.index,[root],[scope])}"  class="[theme:edit.base.className]" readonly="readonly" style="width: 100%" />',
 			'{*else}',
@@ -37395,7 +37572,8 @@ if(!this._searchPartHas) return true;
 }
 ,
 	afterClientSideSummaryCompute: function(csSummary) { },
-	onInplaceEditStart: function(data,rowNumber) { ;
+	onInplaceEditStart: function(data,rowNumber) { 
+;
 ;this.setValue(rowNumber,true);},
 	onInplaceEditSave: function(newData,data,rowNumber) { if(typeof this._inplaceEditing && this._inplaceEditing.events && this._inplaceEditing.events.afteredit) {
 	for(var n in this._inplaceEditing.events.afteredit) {
@@ -71464,9 +71642,9 @@ DLG1_DlgObj.__info = {
 	"createdBy": "Paul",
 	"lastUpdatedBy": "",
 	"dateCreated": "2018-10-14",
-	"dateLastEdited": "2025-4-9",
+	"dateLastEdited": "2025-4-11",
 	"comments": "",
-	"revisionnumber": 2155
+	"revisionnumber": 2165
 }
 A5.__csdfmt = (obj) =>{ if(obj) return obj.stateInfo.__dtfmt};DLG1_DlgObj._workingPreview = false;
 $u.decimal = '.';
@@ -74260,7 +74438,7 @@ if(listObj) listObj._state.paginated = false;
 if(listObj) listObj._state._optimizedJSON = true;
 if(listObj) listObj._state.highlight = {  };
 if(listObj) listObj._state.whereClause = '';
-if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n09/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
+if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n11/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
 listObj._state.order = '';
 		
 		var flagPersist = false;
@@ -74353,7 +74531,7 @@ if(listObj) listObj._state.paginated = false;
 if(listObj) listObj._state._optimizedJSON = true;
 if(listObj) listObj._state.highlight = {  };
 if(listObj) listObj._state.whereClause = '';
-if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n09/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
+if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n11/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
 listObj._state.order = 'Description';
 		
 		var flagPersist = false;
@@ -74412,7 +74590,7 @@ if(listObj) listObj._state.paginated = false;
 if(listObj) listObj._state._optimizedJSON = true;
 if(listObj) listObj._state.highlight = {  };
 if(listObj) listObj._state.whereClause = '';
-if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n09/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
+if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n11/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
 listObj._state.order = 'Description';
 		
 		var flagPersist = false;
@@ -74448,7 +74626,7 @@ if(listObj) listObj._state.paginated = false;
 if(listObj) listObj._state._optimizedJSON = true;
 if(listObj) listObj._state.highlight = {  };
 if(listObj) listObj._state.whereClause = '';
-if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n09/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
+if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n11/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
 listObj._state.order = 'Description';
 		
 		var flagPersist = false;
@@ -74523,7 +74701,7 @@ if(listObj) listObj._state.paginated = false;
 if(listObj) listObj._state._optimizedJSON = true;
 if(listObj) listObj._state.highlight = {  };
 if(listObj) listObj._state.whereClause = '';
-if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n09/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
+if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n11/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
 listObj._state.order = 'Description';
 		
 		var flagPersist = false;
@@ -74557,7 +74735,7 @@ if(listObj) listObj._state.paginated = false;
 if(listObj) listObj._state._optimizedJSON = true;
 if(listObj) listObj._state.highlight = {  };
 if(listObj) listObj._state.whereClause = 'company_id = :MCOMPID  AND  medred_id = :MMEDREPID';
-if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n09/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
+if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n11/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
 listObj._state.order = '';
 		
 		var flagPersist = false;
@@ -74598,7 +74776,7 @@ if(listObj) listObj._state.paginated = false;
 if(listObj) listObj._state._optimizedJSON = true;
 if(listObj) listObj._state.highlight = {  };
 if(listObj) listObj._state.whereClause = 'company_id = :MCOMPID  AND  medred_id = :MMEDREPID';
-if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n09/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
+if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n11/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
 listObj._state.order = '';
 		
 		var flagPersist = false;
@@ -74678,7 +74856,7 @@ if(listObj) listObj._state.paginated = false;
 if(listObj) listObj._state._optimizedJSON = true;
 if(listObj) listObj._state.highlight = {  };
 if(listObj) listObj._state.whereClause = '';
-if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n09/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
+if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n11/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
 listObj._state.order = '';
 		
 		var flagPersist = false;
@@ -74757,7 +74935,7 @@ if(listObj) listObj._state.paginated = true;
 if(listObj) listObj._state._optimizedJSON = false;
 if(listObj) listObj._state.highlight = {  };
 if(listObj) listObj._state.whereClause = 'company_id = :MCOMPID  AND  user_id = :MMEDREPID';
-if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n09/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
+if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n11/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
 listObj._state.order = '';
 		
 		var flagPersist = false;
@@ -75336,6 +75514,11 @@ if(lObj) lObj.refresh()
 ;
 var lObj = DLG1_DlgObj.getControl('LSTITEMS');
 var __obj = {
+	"_inplaceEditing": {
+		"choices": {
+			"bonusunit": ['','Pack','Unit']
+		}
+	}
 };
 if(lObj) $u.o.assign(lObj,__obj);;var lObj = DLG1_DlgObj.getControl('LSTVISITHEAD');
 var __obj = {
@@ -75914,7 +76097,7 @@ if(eleS && eleT) {
 
 
 
-;DLG1_DlgObj.setStateInfo({ 	__args_n_MMEDREPID: '0', 	__args_n_POIDID: '0', 	__args_n_MPOIID: '0', 	__args_d_MDATE: '09/04/2025', 	__args_n_LOADTYPE: '0', 	__args_n_MCOMPID: '0', 	__args_n_SYNCINPROGRESS: '0', 	__args_n_MREPID: '0', 	__args_d_MTDATE: '', 	__args_n_SHOWALLDAYINPLAN: '0', 	__args_n_MREPID_1: '0', 	__args_c_MMEDREPNAME: '', 	__args_c_MREGIONDESC: '', 	__args_c_MCOMPNAME: '', 	argValuesENC: '7C3tO+HPao0zNV11hCNhkXROUiAe0lvZWY7Xx6LngtmeYNlvKd03vaMUf1FQyyDMHkaLn31fVytMkjMWFQJW2XqMjeADGi+MZr5vQEverln7vv/ExOy11CO5U6OCKIW5xk/RPtEPTtrfRI92a4uXv/Am5lYhs8tesoFelPdH/3qgRQpCY3PKRQ6EuhW2P5NQI545GrphcWRWGLTjQkfwlaxbWBCBFdRlp43rVqnOIrrjF/3huMZzFhoPV/1OH8Tb5W4wfjqjbL5e4FGXSnY807wvaCMvCvDezv1Ao1/8FB7MVp8guCHdtguXXKdaYHRQP7QDC+k69r0p8R+ZlpgtZmURrKY47tkSUsT0eXcP/ONbTxS0ZkE/wDAQY/waKxNNLDVV81AcHOyz6r3uGPrkTBuV1yR8ybax4e1h313lhxUoc9KzgVARigQMHR85eAiOvXhKS/4cPKiw40xsyvn9UWCHkDHxMWyQ7X+sa9x0/QJm456wiEPKOiBvztoD28r4abuddY/Qe+KYkoleYv5AiMsyVWMr1IxUiPB5TwOv5fY=', 	__debugInfo: 'ssi-6014' });//ssi-6014;
+;DLG1_DlgObj.setStateInfo({ 	__args_n_MMEDREPID: '0', 	__args_n_POIDID: '0', 	__args_n_MPOIID: '0', 	__args_d_MDATE: '11/04/2025', 	__args_n_LOADTYPE: '0', 	__args_n_MCOMPID: '0', 	__args_n_SYNCINPROGRESS: '0', 	__args_n_MREPID: '0', 	__args_d_MTDATE: '', 	__args_n_SHOWALLDAYINPLAN: '0', 	__args_n_MREPID_1: '0', 	__args_c_MMEDREPNAME: '', 	__args_c_MREGIONDESC: '', 	__args_c_MCOMPNAME: '', 	argValuesENC: '7C3tO+HPao0zNV11hCNhkXROUiAe0lvZWY7Xx6LngtmeYNlvKd03vaMUf1FQyyDMHkaLn31fVytMkjMWFQJW2XqMjeADGi+MZr5vQEverln7vv/ExOy11CO5U6OCKIW5xk/RPtEPTtoHxNA3bKBO2TALqjvX/ugrMGVwa4GCSf7Lvg1NDqvmj3Gf7rgGRWffWlRMhQPBwJpM6PdedD34HmBA+xGSN31MWTYawhkeVLP7I/inQFQZsQSvp4lWnQngSO8aPS0pYQ3hmZyqRZX6+qqceaGqwTbMGDLgx4XTjg0OI87lr1pN/2OBLKioLE8kLtToZohEV5RBRdHHfL3s3HkF3uO49zdqsHDLMc+aj3IpvhPwFer/6uwt4TCk54WgdWV1zAMQ5dcDFGtt/vk9W1xnanxEmdl3B6tSAvpNseTKdo5HJcONIec1phqj4VF2Gc4tYooONAszOoPDmi1LgjGXQuWK+x3pZnx9b9MvcMcMtlHabU+i79W1ZXKZxxrSo5B5hN/0TwIpCKsdhQ25RAoQSJ7e/RD37x/7J5rTT9g=', 	__debugInfo: 'ssi-6014' });//ssi-6014;
 ;
 
 
