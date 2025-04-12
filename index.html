@@ -34866,6 +34866,53 @@ DLG1_DlgObj._listViewSettings['LSTITEMS'] = {
 	_hasDependentLists: false,
 	_dataSourceType: 'Static',
 	_inplaceEditing: {
+		settings: {
+			dropdown: {
+				va: {
+					javascript: ''
+				},
+				bonusunit: {
+					javascript: ''
+				}
+			},
+			editcombo: {
+				sellunit: {
+	"type": "Javascript",
+	"windowwidth": "Default",
+	"windowheight": "200px",
+	"windowRowStyle": "",
+	"windowRowClass": "",
+	"windowHeadingClass": "",
+	"windowBodyStyle": "width:90%",
+	"staticchoices": "",
+	"dynamictype": "DatabaseQuery",
+	"dynamic": {
+		"connectionstring": "",
+		"tablename": "",
+		"fieldname": "",
+		"fieldsTodisplay": "",
+		"fillinfieldsmap": "",
+		"template": "",
+		"xbasicfunctionname": "",
+		"xbasicfunctiondefinition": "",
+		"javascriptfunctionname": "",
+		"javascript": "\r\n\r\nconsole.log(DLG1_DlgObj._unitsarray);\r\n\r\nvar mid = DLG1_DlgObj.getValue('list::LSTITEMS::id');\r\nvar mc = DLG1_DlgObj.getValue('list::LSTITEMS::product_code');\r\n\r\nvar r = lObj._pickerRow; // Assuming lObj is already defined\r\n\r\nconsole.log(DLG1_DlgObj);\r\n\r\nvar array = DLG1_DlgObj._unitsarray;\r\n\r\nif (!Array.isArray(array)) {\r\n    alert(\"Array is undefined or not an array.\");\r\n    return;\r\n}\r\n\r\nalert(array.length);\r\nalert(mid);\r\n\r\nvar a = [];\r\n\r\nfor (var i = 0; i < array.length; i++) {\r\n\tconsole.log(array[i].id);\r\n    if (array[i].item_id == mid) {\r\n        a.push(array[i].sellingunit); // Fixed syntax\r\n    }\r\n}\r\n\r\nreturn a;"
+	},
+	"userMustPickFromList": true,
+	"includeblankvalue": false,
+	"openListWhenClickOnControl": false,
+	"loaddatamethod": "AtRenderTime",
+	"allowdatacaching": true,
+	"loadingmessage": "Loading...",
+	"hasdynamicfilter": false,
+	"dynamicfilter": "",
+	"filter": "",
+	"order": "",
+	"userCanFilter": false,
+	"style": "width: 90%"
+}
+			}
+		},
 		events: {
 			onfocus: {
 				qty: function(rowNumber,oldData,newData,listObj) { var renderIndex = oldData['*renderIndex'];
@@ -34925,80 +34972,6 @@ let input = document.getElementById("LSTITEMS."+rowNumber+".QTY.CONTROL");
 console.log(input);
 input.value = 12;
 return;}
-			}
-		},
-		settings: {
-			editcombo: {
-				sellunit: {
-	"type": "Javascript",
-	"windowwidth": "Default",
-	"windowheight": "200px",
-	"windowRowStyle": "",
-	"windowRowClass": "",
-	"windowHeadingClass": "",
-	"windowBodyStyle": "width:90%",
-	"staticchoices": "",
-	"dynamictype": "DatabaseQuery",
-	"dynamic": {
-		"connectionstring": "",
-		"tablename": "",
-		"fieldname": "",
-		"fieldsTodisplay": "",
-		"fillinfieldsmap": "",
-		"template": "",
-		"xbasicfunctionname": "",
-		"xbasicfunctiondefinition": "",
-		"javascriptfunctionname": "",
-		"javascript": "\r\n\r\nconsole.log(DLG1_DlgObj._unitsarray);\r\n\r\nvar mid = DLG1_DlgObj.getValue('list::LSTITEMS::id');\r\nvar mc = DLG1_DlgObj.getValue('list::LSTITEMS::product_code');\r\n\r\nvar r = lObj._pickerRow; // Assuming lObj is already defined\r\n\r\nconsole.log(DLG1_DlgObj);\r\n\r\nvar array = DLG1_DlgObj._unitsarray;\r\n\r\nif (!Array.isArray(array)) {\r\n    alert(\"Array is undefined or not an array.\");\r\n    return;\r\n}\r\n\r\nalert(array.length);\r\nalert(mid);\r\n\r\nvar a = [];\r\n\r\nfor (var i = 0; i < array.length; i++) {\r\n\tconsole.log(array[i].id);\r\n    if (array[i].item_id == mid) {\r\n        a.push(array[i].sellingunit); // Fixed syntax\r\n    }\r\n}\r\n\r\nreturn a;"
-	},
-	"userMustPickFromList": true,
-	"includeblankvalue": false,
-	"openListWhenClickOnControl": false,
-	"loaddatamethod": "AtRenderTime",
-	"allowdatacaching": true,
-	"loadingmessage": "Loading...",
-	"hasdynamicfilter": false,
-	"dynamicfilter": "",
-	"filter": "",
-	"order": "",
-	"userCanFilter": false,
-	"style": "width: 90%"
-},
-				bonusunit: {
-	"type": "Static",
-	"windowwidth": "Default",
-	"windowheight": "200px",
-	"windowRowStyle": "",
-	"windowRowClass": "",
-	"windowHeadingClass": "",
-	"windowBodyStyle": "",
-	"staticchoices": "Pack\r\nUnit",
-	"dynamictype": "DatabaseQuery",
-	"dynamic": {
-		"connectionstring": "",
-		"tablename": "",
-		"fieldname": "",
-		"fieldsTodisplay": "",
-		"fillinfieldsmap": "",
-		"template": "",
-		"xbasicfunctionname": "",
-		"xbasicfunctiondefinition": "",
-		"javascriptfunctionname": "",
-		"javascript": ""
-	},
-	"userMustPickFromList": false,
-	"includeblankvalue": true,
-	"openListWhenClickOnControl": false,
-	"loaddatamethod": "AtRenderTime",
-	"allowdatacaching": true,
-	"loadingmessage": "Loading...",
-	"hasdynamicfilter": false,
-	"dynamicfilter": "",
-	"filter": "",
-	"order": "",
-	"userCanFilter": false,
-	"style": ""
-}
 			}
 		},
 		allow: true,
@@ -35195,7 +35168,8 @@ return '';},
 return '';}
 		},
 		choices: {
-			bonusunit: ['','Pack','Unit']
+			va: ['','unit','pack'],
+			bonusunit: ['','Pack','U']
 		}
 	},
 	sortVirtualJavascript_wh4: function(data) {
@@ -36986,7 +36960,7 @@ DLG1_DlgObj._listSystemOnClick('LSTITEMS',this.selection[0]);},
 			'    <div class="section right" style="border: 1px solid black;">',
 			'      <div class="title">UNIT</div>',
 			'      <div class="value"><span a5-item="_a5FieldEvent:sellunit" ><span class="qty-bonus-display" style="width: 80%;"><span id="DLG1.LSTITEMS.SELLUNIT.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 10px; padding-left: 0px;"><table id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL.CONTAINER" cellspacing="0" cellpadding="0" class="[theme:editButtonGroup.base.container.className|Alpha-MagentaEditBG]" style="width: 100%; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;; display: inline-table; white-space:normal; "> <tr> <td style="width:100%"> \t<input   a5-item = "A5EDITNOOP" onchange = "DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); var rowNumber = {[temp].info.index}; <escape<var newData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.data[\'R\'+ rowNumber]; var oldData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._data[rowNumber]; try{ DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._inplaceEditing.events.onchange.sellunit.call(this,rowNumber,oldData,newData,DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']); }catch(e) {}  ;>>" oncontextmenu = "$e.stopPropagation(event)" a5-index="{[temp].info.index}" a5-on-blur="sellunit" a5-on-focus="sellunit" a5-on-keypress="sellunit" a5-on-keyup="sellunit" a5-on-keydown="sellunit"\tid="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL"   value="{[scope]._editing.data[\'R\'+[temp].info.index].sellunit:escape}"  ontouchstart="$e.stopPropagation(event);" a5-name="sellunit" a5-on-change="sellunit" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"    readonly="readonly"  autocomplete="off"   size="200" class="[theme:editButtonGroup.base.container.editClassName|class.editButtonGroupEdit]" style="width: 100%; ; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;" /> \t </td> \t\t<td id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROLBUTTON" a5-item="A5EDITCOMBO:sellunit"  style="width: 0%;"><span id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL.CUSTOMBUTTONSTATIC.0"><img src="[theme:general.icons.edit.dropdown|svgIcon=#alpha-icon-chevronDown:icon]" /></span></td> \t</tr> </table> {[scope]._editing.getError([scope],[temp].info.index,\'sellunit\')}</div>{*else}{sellunit}{*endif}</span></span></span></div>',
-			'      <div class="value" style=\'margin-top: 5px\'><span a5-item="_a5FieldEvent:bonusunit" ><span id="DLG1.LSTITEMS.BONUSUNIT.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 10px; display: inline-block; width: 120px"><table id="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL.CONTAINER" cellspacing="0" cellpadding="0" class="[theme:editButtonGroup.base.container.className|Alpha-MagentaEditBG]" style="width: 100%; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;; display: inline-table; white-space:normal; "> <tr> <td style="width:100%"> \t<input   a5-item = "A5EDITNOOP" onchange = "DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); var rowNumber = {[temp].info.index}; <escape<var newData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.data[\'R\'+ rowNumber]; var oldData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._data[rowNumber]; try{ DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._inplaceEditing.events.onchange.bonusunit.call(this,rowNumber,oldData,newData,DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']); }catch(e) {}  ;>>" oncontextmenu = "$e.stopPropagation(event)" a5-index="{[temp].info.index}" a5-on-blur="bonusunit" a5-on-focus="bonusunit" a5-on-keypress="bonusunit" a5-on-keyup="bonusunit" a5-on-keydown="bonusunit"\tid="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL"   value="{[scope]._editing.data[\'R\'+[temp].info.index].bonusunit:escape}"  ontouchstart="$e.stopPropagation(event);" a5-name="bonusunit" a5-on-change="bonusunit" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"    autocomplete="off"   size="200" class="[theme:editButtonGroup.base.container.editClassName|class.editButtonGroupEdit]" style="width: 100%; ; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;" /> \t </td> \t\t<td id="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROLBUTTON" a5-item="A5EDITCOMBO:bonusunit"  style="width: 0%;"><span id="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL.CUSTOMBUTTONSTATIC.0"><img src="[theme:general.icons.edit.dropdown|svgIcon=#alpha-icon-chevronDown:icon]" /></span></td> \t</tr> </table> {[scope]._editing.getError([scope],[temp].info.index,\'bonusunit\')}</div>{*else}{bonusunit}{*endif}</span></span></div>',
+			'      <div class="value" style=\'margin-top: 5px\'><span a5-item="_a5FieldEvent:bonusunit" ><span id="DLG1.LSTITEMS.BONUSUNIT.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 10px; display: inline-block; width: 120px"><select class="[class.dialogSelect]" \t\tstyle="width: 100%;" \t\ta5-name="bonusunit" \t\tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"  \t\ta5-on-change="bonusunit" \t\ta5-on-blur="bonusunit" \t\ta5-on-focus="bonusunit" \t\ta5-on-keypress="bonusunit" \t\ta5-on-keyup="bonusunit" \t\ta5-on-keydown="bonusunit" \t\ta5-index="{[temp].info.index}" \t\ta5-item = "A5EDITNOOP"   \t\tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].bonusunit:escape}" \t\tid="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL" \t\tontouchstart="$e.stopPropagation(event);" \t\t   \t\t > \t{[scope]._editing.selectOptions(\'__local__bonusunit\',[scope]._editing.data[\'R\'+[temp].info.index].bonusunit,\'bonusunit\',DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'])} </select>  {[scope]._editing.getError([scope],[temp].info.index,\'bonusunit\')}</div>{*else}{bonusunit}{*endif}</span></span></div>',
 			'    </div>',
 			'    <div class="section save">',
 			'        {*ensure __edit}',
@@ -37015,6 +36989,7 @@ DLG1_DlgObj._listSystemOnClick('LSTITEMS',this.selection[0]);},
 			'{*endif}',
 			'\t\t\t',
 			'  </div>',
+			'<span a5-item="_a5FieldEvent:va" ><span id="DLG1.LSTITEMS.VA.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 10px; display: inline-block; width: 100px"><select class="[class.dialogSelect]" \t\tstyle="width: 100%;" \t\ta5-name="va" \t\tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"  \t\ta5-on-change="va" \t\ta5-on-blur="va" \t\ta5-on-focus="va" \t\ta5-on-keypress="va" \t\ta5-on-keyup="va" \t\ta5-on-keydown="va" \t\ta5-index="{[temp].info.index}" \t\ta5-item = "A5EDITNOOP"   \t\tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].va:escape}" \t\tid="LSTITEMS.{[temp].info.index}.VA.CONTROL" \t\tontouchstart="$e.stopPropagation(event);" \t\t   \t\t > \t{[scope]._editing.selectOptions(\'__local__va\',[scope]._editing.data[\'R\'+[temp].info.index].va,\'va\',DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'])} </select>  {[scope]._editing.getError([scope],[temp].info.index,\'va\')}</div>{*else}{va}{*endif}</span></span>',
 			'</div>']
 		},
 		sample: {
@@ -71727,7 +71702,7 @@ DLG1_DlgObj.__info = {
 	"dateCreated": "2018-10-14",
 	"dateLastEdited": "2025-4-12",
 	"comments": "",
-	"revisionnumber": 2174
+	"revisionnumber": 2176
 }
 A5.__csdfmt = (obj) =>{ if(obj) return obj.stateInfo.__dtfmt};DLG1_DlgObj._workingPreview = false;
 $u.decimal = '.';
@@ -75544,7 +75519,8 @@ var lObj = DLG1_DlgObj.getControl('LSTITEMS');
 var __obj = {
 	"_inplaceEditing": {
 		"choices": {
-			"bonusunit": ['','Pack','Unit']
+			"va": ['','unit','pack'],
+			"bonusunit": ['','Pack','U']
 		}
 	}
 };
