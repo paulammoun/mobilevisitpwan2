@@ -404,6 +404,88 @@ iframe {-webkit-user-select: text;}
   justify-content: space-between;
   font-weight: bold;
   max-width: 100%; }
+.qty-bonus-display {
+  /* all: unset !important; */
+  display: inline-block !important;
+  width: 80px !important;
+  height: 35px !important;
+  line-height: 30px !important;
+  text-align: center !important;
+  /* vertical-align: center is invalid */
+  vertical-align: middle !important;
+  border: 1px solid #ccc !important;
+  font-size: 14px !important;
+  background-color: #f9f9f9 !important;
+  box-sizing: border-box !important;
+  /* Units typo: 0pc is valid but probably meant to be 0px */
+  padding-top: 0px; }
+.list-item {
+  width: 100%;
+  max-width: 100%;
+  border-bottom: 2px solid red;
+  padding: 10px;
+  font-size: 14px;
+  box-sizing: border-box; }
+.product-header {
+  display: flex;
+  max-width: 100%;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-weight: bold; }
+.product-code {
+  width: 30%;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+.description {
+  max-width: 100%;
+  width: 70%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+.product-breakdown {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px; }
+.section {
+  flex-direction: column;
+  max-width: 100%;
+  width: 20%;
+  text-align: right; }
+.section.center {
+  text-align: left;
+  max-width: 100%;
+  width: 25%; }
+.section.right {
+  text-align: left;
+  max-width: 100%;
+  width: 30%; }
+.section.save {
+  text-align: left;
+  max-width: 100%;
+  width: 25%; }
+.title {
+  font-size: 12px;
+  font-weight: bold;
+  color: #000;
+  max-width: 100%; }
+.value {
+  font-size: 14px; }
+.label {
+  padding-top: 10px;
+  max-width: 100%; }
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  max-width: 100%; }
+.footer-item {
+  display: block;
+  justify-content: space-between;
+  font-weight: bold;
+  max-width: 100%; }
 .listItem {
   background: none !important;
   color: inherit !important;
@@ -540,13 +622,13 @@ iframe {-webkit-user-select: text;}
   /* all: unset !important; */
   display: inline-block !important;
   width: 80px !important;
-  height: 35px !important;
+  height: 40px !important;
   line-height: 30px !important;
   text-align: center !important;
   /* vertical-align: center is invalid */
   vertical-align: middle !important;
   border: 1px solid #ccc !important;
-  font-size: 14px !important;
+  font-size: 16px !important;
   background-color: #f9f9f9 !important;
   box-sizing: border-box !important;
   /* Units typo: 0pc is valid but probably meant to be 0px */
@@ -36960,7 +37042,7 @@ DLG1_DlgObj._listSystemOnClick('LSTITEMS',this.selection[0]);},
 			'    <div class="section right" style="border: 1px solid black;">',
 			'      <div class="title">UNIT</div>',
 			'      <div class="value"><span a5-item="_a5FieldEvent:sellunit" ><span class="qty-bonus-display" style="width: 80%;"><span id="DLG1.LSTITEMS.SELLUNIT.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 10px; padding-left: 0px;"><table id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL.CONTAINER" cellspacing="0" cellpadding="0" class="[theme:editButtonGroup.base.container.className|Alpha-MagentaEditBG]" style="width: 100%; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;; display: inline-table; white-space:normal; "> <tr> <td style="width:100%"> \t<input   a5-item = "A5EDITNOOP" onchange = "DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); var rowNumber = {[temp].info.index}; <escape<var newData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.data[\'R\'+ rowNumber]; var oldData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._data[rowNumber]; try{ DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._inplaceEditing.events.onchange.sellunit.call(this,rowNumber,oldData,newData,DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']); }catch(e) {}  ;>>" oncontextmenu = "$e.stopPropagation(event)" a5-index="{[temp].info.index}" a5-on-blur="sellunit" a5-on-focus="sellunit" a5-on-keypress="sellunit" a5-on-keyup="sellunit" a5-on-keydown="sellunit"\tid="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL"   value="{[scope]._editing.data[\'R\'+[temp].info.index].sellunit:escape}"  ontouchstart="$e.stopPropagation(event);" a5-name="sellunit" a5-on-change="sellunit" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"    readonly="readonly"  autocomplete="off"   size="200" class="[theme:editButtonGroup.base.container.editClassName|class.editButtonGroupEdit]" style="width: 100%; ; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;" /> \t </td> \t\t<td id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROLBUTTON" a5-item="A5EDITCOMBO:sellunit"  style="width: 0%;"><span id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL.CUSTOMBUTTONSTATIC.0"><img src="[theme:general.icons.edit.dropdown|svgIcon=#alpha-icon-chevronDown:icon]" /></span></td> \t</tr> </table> {[scope]._editing.getError([scope],[temp].info.index,\'sellunit\')}</div>{*else}{sellunit}{*endif}</span></span></span></div>',
-			'      <div class="value" style=\'margin-top: 5px\'><span a5-item="_a5FieldEvent:bonusunit" ><span id="DLG1.LSTITEMS.BONUSUNIT.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 10px; display: inline-block; width: 120px"><select class="[class.dialogSelect]" \t\tstyle="width: 100%;" \t\ta5-name="bonusunit" \t\tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"  \t\ta5-on-change="bonusunit" \t\ta5-on-blur="bonusunit" \t\ta5-on-focus="bonusunit" \t\ta5-on-keypress="bonusunit" \t\ta5-on-keyup="bonusunit" \t\ta5-on-keydown="bonusunit" \t\ta5-index="{[temp].info.index}" \t\ta5-item = "A5EDITNOOP"   \t\tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].bonusunit:escape}" \t\tid="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL" \t\tontouchstart="$e.stopPropagation(event);" \t\t   \t\t > \t{[scope]._editing.selectOptions(\'__local__bonusunit\',[scope]._editing.data[\'R\'+[temp].info.index].bonusunit,\'bonusunit\',DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'])} </select>  {[scope]._editing.getError([scope],[temp].info.index,\'bonusunit\')}</div>{*else}{bonusunit}{*endif}</span></span></div>',
+			'      <div class="value" style=\'margin-top: 5px\'><span a5-item="_a5FieldEvent:bonusunit" ><span class="qty-bonus-display" style=""><span id="DLG1.LSTITEMS.BONUSUNIT.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 10px; padding-left: 0px;"><select class="[class.dialogSelect]" \t\tstyle="width: 100%;" \t\ta5-name="bonusunit" \t\tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"  \t\ta5-on-change="bonusunit" \t\ta5-on-blur="bonusunit" \t\ta5-on-focus="bonusunit" \t\ta5-on-keypress="bonusunit" \t\ta5-on-keyup="bonusunit" \t\ta5-on-keydown="bonusunit" \t\ta5-index="{[temp].info.index}" \t\ta5-item = "A5EDITNOOP"   \t\tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].bonusunit:escape}" \t\tid="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL" \t\tontouchstart="$e.stopPropagation(event);" \t\t   \t\t > \t{[scope]._editing.selectOptions(\'__local__bonusunit\',[scope]._editing.data[\'R\'+[temp].info.index].bonusunit,\'bonusunit\',DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'])} </select>  {[scope]._editing.getError([scope],[temp].info.index,\'bonusunit\')}</div>{*else}{bonusunit}{*endif}</span></span></span></div>',
 			'    </div>',
 			'    <div class="section save">',
 			'        {*ensure __edit}',
@@ -71702,7 +71784,7 @@ DLG1_DlgObj.__info = {
 	"dateCreated": "2018-10-14",
 	"dateLastEdited": "2025-4-12",
 	"comments": "",
-	"revisionnumber": 2176
+	"revisionnumber": 2178
 }
 A5.__csdfmt = (obj) =>{ if(obj) return obj.stateInfo.__dtfmt};DLG1_DlgObj._workingPreview = false;
 $u.decimal = '.';
