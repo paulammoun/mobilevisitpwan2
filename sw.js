@@ -1,10 +1,10 @@
 // **Template code last revised: 08/30/21
 
-const staticCacheName = 'test Amiga-Cloud2_pwa_cache-v-01.50';
-const dynamicCacheName = 'test Amiga-Cloud2_pwa_dynamic_cache-v-01.50';
+const staticCacheName = 'test Amiga-Cloud2_pwa_cache-v-01.51';
+const dynamicCacheName = 'test Amiga-Cloud2_pwa_dynamic_cache-v-01.51';
 const dynamicCacheSize = 5;
 const offlineFilename = './offline.html';
-const showDebugInfo = true;
+const showDebugInfo = false;
 const usingFirestore = false;
 const usingOneSignalPush = false;
 
