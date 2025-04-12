@@ -404,88 +404,6 @@ iframe {-webkit-user-select: text;}
   justify-content: space-between;
   font-weight: bold;
   max-width: 100%; }
-.qty-bonus-display {
-  /* all: unset !important; */
-  display: inline-block !important;
-  width: 80px !important;
-  height: 35px !important;
-  line-height: 30px !important;
-  text-align: center !important;
-  /* vertical-align: center is invalid */
-  vertical-align: middle !important;
-  border: 1px solid #ccc !important;
-  font-size: 14px !important;
-  background-color: #f9f9f9 !important;
-  box-sizing: border-box !important;
-  /* Units typo: 0pc is valid but probably meant to be 0px */
-  padding-top: 0px; }
-.list-item {
-  width: 100%;
-  max-width: 100%;
-  border-bottom: 2px solid red;
-  padding: 10px;
-  font-size: 14px;
-  box-sizing: border-box; }
-.product-header {
-  display: flex;
-  max-width: 100%;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  font-weight: bold; }
-.product-code {
-  width: 30%;
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-.description {
-  max-width: 100%;
-  width: 70%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-.product-breakdown {
-  max-width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px; }
-.section {
-  flex-direction: column;
-  max-width: 100%;
-  width: 20%;
-  text-align: right; }
-.section.center {
-  text-align: left;
-  max-width: 100%;
-  width: 25%; }
-.section.right {
-  text-align: left;
-  max-width: 100%;
-  width: 30%; }
-.section.save {
-  text-align: left;
-  max-width: 100%;
-  width: 25%; }
-.title {
-  font-size: 12px;
-  font-weight: bold;
-  color: #000;
-  max-width: 100%; }
-.value {
-  font-size: 14px; }
-.label {
-  padding-top: 10px;
-  max-width: 100%; }
-.product-footer {
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
-  max-width: 100%; }
-.footer-item {
-  display: block;
-  justify-content: space-between;
-  font-weight: bold;
-  max-width: 100%; }
 .listItem {
   background: none !important;
   color: inherit !important;
@@ -618,84 +536,86 @@ iframe {-webkit-user-select: text;}
   border: 1px solid #eee;
   margin: 10px;
   flex: 1 auto; }
+.DLG1_LSTITEMS_2 {
+  /* Header can stay flex */
+  /* Convert breakdown to table */
+  /* Rows are now cells inside a table row */
+  /* Footer can stay flex if you want, but here it is in table layout */ }
 .DLG1_LSTITEMS_2 .qty-bonus-display {
   /* all: unset !important; */
   display: inline-block !important;
   width: 80px !important;
-  height: 40px !important;
+  height: 35px !important;
   line-height: 30px !important;
   text-align: center !important;
   /* vertical-align: center is invalid */
   vertical-align: middle !important;
   border: 1px solid #ccc !important;
-  font-size: 16px !important;
+  font-size: 14px !important;
   background-color: #f9f9f9 !important;
   box-sizing: border-box !important;
   /* Units typo: 0pc is valid but probably meant to be 0px */
   padding-top: 0px; }
 .DLG1_LSTITEMS_2 .list-item {
   width: 100%;
-  max-width: 100%;
   border-bottom: 2px solid red;
   padding: 10px;
   font-size: 14px;
   box-sizing: border-box; }
 .DLG1_LSTITEMS_2 .product-header {
-  max-width: 100%;
-  justify-content: space-between;
+  display: table;
+  width: 100%;
   margin-bottom: 10px;
-  font-weight: bold; }
-.DLG1_LSTITEMS_2 .product-code {
-  width: 30%;
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
+  font-weight: bold;
+  table-layout: fixed; }
+.DLG1_LSTITEMS_2 .product-code,
 .DLG1_LSTITEMS_2 .description {
-  max-width: 100%;
-  width: 70%;
+  display: table-cell;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap; }
+  white-space: nowrap;
+  vertical-align: middle; }
+.DLG1_LSTITEMS_2 .product-code {
+  width: 30%; }
+.DLG1_LSTITEMS_2 .description {
+  width: 70%; }
 .DLG1_LSTITEMS_2 .product-breakdown {
-  max-width: 100%;
-  justify-content: space-between;
-  margin-bottom: 10px; }
+  display: table;
+  width: 100%;
+  margin-bottom: 10px;
+  table-layout: fixed; }
 .DLG1_LSTITEMS_2 .section {
-  flex-direction: column;
-  max-width: 100%;
-  width: 20%;
-  text-align: right; }
+  display: table-cell;
+  vertical-align: top;
+  padding: 0 5px; }
 .DLG1_LSTITEMS_2 .section.center {
   text-align: left;
-  max-width: 100%;
   width: 25%; }
 .DLG1_LSTITEMS_2 .section.right {
   text-align: left;
-  max-width: 100%;
-  width: 30%; }
+  width: 40%; }
 .DLG1_LSTITEMS_2 .section.save {
   text-align: left;
-  max-width: 100%;
-  width: 25%; }
+  width: 15%; }
 .DLG1_LSTITEMS_2 .title {
   font-size: 12px;
   font-weight: bold;
-  color: #000;
-  max-width: 100%; }
+  color: #000; }
 .DLG1_LSTITEMS_2 .value {
-  font-size: 14px; }
+  font-size: 14px;
+  margin-top: 5px; }
 .DLG1_LSTITEMS_2 .label {
-  padding-top: 10px;
-  max-width: 100%; }
+  font-size: 14px;
+  padding-top: 10px; }
 .DLG1_LSTITEMS_2 .product-footer {
-  justify-content: space-between;
+  display: table;
+  width: 100%;
   font-weight: bold;
-  max-width: 100%; }
+  table-layout: fixed; }
 .DLG1_LSTITEMS_2 .footer-item {
-  justify-content: space-between;
-  font-weight: bold;
-  max-width: 100%; }
+  display: table-cell;
+  vertical-align: top;
+  padding-right: 10px; }
 ._DLG1_LSTVISITHEAD_dirtyRow {
   position: relative; }
 ._DLG1_LSTVISITHEAD_dirtyRow:before {
@@ -34944,53 +34864,6 @@ DLG1_DlgObj._listViewSettings['LSTITEMS'] = {
 	_hasDependentLists: false,
 	_dataSourceType: 'Static',
 	_inplaceEditing: {
-		settings: {
-			dropdown: {
-				va: {
-					javascript: ''
-				},
-				bonusunit: {
-					javascript: ''
-				}
-			},
-			editcombo: {
-				sellunit: {
-	"type": "Javascript",
-	"windowwidth": "Default",
-	"windowheight": "200px",
-	"windowRowStyle": "",
-	"windowRowClass": "",
-	"windowHeadingClass": "",
-	"windowBodyStyle": "width:90%",
-	"staticchoices": "",
-	"dynamictype": "DatabaseQuery",
-	"dynamic": {
-		"connectionstring": "",
-		"tablename": "",
-		"fieldname": "",
-		"fieldsTodisplay": "",
-		"fillinfieldsmap": "",
-		"template": "",
-		"xbasicfunctionname": "",
-		"xbasicfunctiondefinition": "",
-		"javascriptfunctionname": "",
-		"javascript": "\r\n\r\nconsole.log(DLG1_DlgObj._unitsarray);\r\n\r\nvar mid = DLG1_DlgObj.getValue('list::LSTITEMS::id');\r\nvar mc = DLG1_DlgObj.getValue('list::LSTITEMS::product_code');\r\n\r\nvar r = lObj._pickerRow; // Assuming lObj is already defined\r\n\r\nconsole.log(DLG1_DlgObj);\r\n\r\nvar array = DLG1_DlgObj._unitsarray;\r\n\r\nif (!Array.isArray(array)) {\r\n    alert(\"Array is undefined or not an array.\");\r\n    return;\r\n}\r\n\r\nalert(array.length);\r\nalert(mid);\r\n\r\nvar a = [];\r\n\r\nfor (var i = 0; i < array.length; i++) {\r\n\tconsole.log(array[i].id);\r\n    if (array[i].item_id == mid) {\r\n        a.push(array[i].sellingunit); // Fixed syntax\r\n    }\r\n}\r\n\r\nreturn a;"
-	},
-	"userMustPickFromList": true,
-	"includeblankvalue": false,
-	"openListWhenClickOnControl": false,
-	"loaddatamethod": "AtRenderTime",
-	"allowdatacaching": true,
-	"loadingmessage": "Loading...",
-	"hasdynamicfilter": false,
-	"dynamicfilter": "",
-	"filter": "",
-	"order": "",
-	"userCanFilter": false,
-	"style": "width: 90%"
-}
-			}
-		},
 		events: {
 			onfocus: {
 				qty: function(rowNumber,oldData,newData,listObj) { var renderIndex = oldData['*renderIndex'];
@@ -35050,6 +34923,80 @@ let input = document.getElementById("LSTITEMS."+rowNumber+".QTY.CONTROL");
 console.log(input);
 input.value = 12;
 return;}
+			}
+		},
+		settings: {
+			editcombo: {
+				sellunit: {
+	"type": "Javascript",
+	"windowwidth": "Default",
+	"windowheight": "200px",
+	"windowRowStyle": "",
+	"windowRowClass": "",
+	"windowHeadingClass": "",
+	"windowBodyStyle": "width:90%",
+	"staticchoices": "",
+	"dynamictype": "DatabaseQuery",
+	"dynamic": {
+		"connectionstring": "",
+		"tablename": "",
+		"fieldname": "",
+		"fieldsTodisplay": "",
+		"fillinfieldsmap": "",
+		"template": "",
+		"xbasicfunctionname": "",
+		"xbasicfunctiondefinition": "",
+		"javascriptfunctionname": "",
+		"javascript": "\r\n\r\nconsole.log(DLG1_DlgObj._unitsarray);\r\n\r\nvar mid = DLG1_DlgObj.getValue('list::LSTITEMS::id');\r\nvar mc = DLG1_DlgObj.getValue('list::LSTITEMS::product_code');\r\n\r\nvar r = lObj._pickerRow; // Assuming lObj is already defined\r\n\r\nconsole.log(DLG1_DlgObj);\r\n\r\nvar array = DLG1_DlgObj._unitsarray;\r\n\r\nif (!Array.isArray(array)) {\r\n    alert(\"Array is undefined or not an array.\");\r\n    return;\r\n}\r\n\r\nalert(array.length);\r\nalert(mid);\r\n\r\nvar a = [];\r\n\r\nfor (var i = 0; i < array.length; i++) {\r\n\tconsole.log(array[i].id);\r\n    if (array[i].item_id == mid) {\r\n        a.push(array[i].sellingunit); // Fixed syntax\r\n    }\r\n}\r\n\r\nreturn a;"
+	},
+	"userMustPickFromList": true,
+	"includeblankvalue": false,
+	"openListWhenClickOnControl": false,
+	"loaddatamethod": "AtRenderTime",
+	"allowdatacaching": true,
+	"loadingmessage": "Loading...",
+	"hasdynamicfilter": false,
+	"dynamicfilter": "",
+	"filter": "",
+	"order": "",
+	"userCanFilter": false,
+	"style": "width: 90%"
+},
+				bonusunit: {
+	"type": "Static",
+	"windowwidth": "Default",
+	"windowheight": "200px",
+	"windowRowStyle": "",
+	"windowRowClass": "",
+	"windowHeadingClass": "",
+	"windowBodyStyle": "",
+	"staticchoices": "Pack\r\nUnit",
+	"dynamictype": "DatabaseQuery",
+	"dynamic": {
+		"connectionstring": "",
+		"tablename": "",
+		"fieldname": "",
+		"fieldsTodisplay": "",
+		"fillinfieldsmap": "",
+		"template": "",
+		"xbasicfunctionname": "",
+		"xbasicfunctiondefinition": "",
+		"javascriptfunctionname": "",
+		"javascript": ""
+	},
+	"userMustPickFromList": false,
+	"includeblankvalue": true,
+	"openListWhenClickOnControl": false,
+	"loaddatamethod": "AtRenderTime",
+	"allowdatacaching": true,
+	"loadingmessage": "Loading...",
+	"hasdynamicfilter": false,
+	"dynamicfilter": "",
+	"filter": "",
+	"order": "",
+	"userCanFilter": false,
+	"style": ""
+}
 			}
 		},
 		allow: true,
@@ -35246,8 +35193,7 @@ return '';},
 return '';}
 		},
 		choices: {
-			va: ['','unit','pack'],
-			bonusunit: ['','Pack','U']
+			bonusunit: ['','Pack','Unit']
 		}
 	},
 	sortVirtualJavascript_wh4: function(data) {
@@ -37012,36 +36958,31 @@ DLG1_DlgObj._listSystemOnClick('LSTITEMS',this.selection[0]);},
 				separatorClassName: ''
 			},
 			template: [
-			'<div class="list-item" style="display: table; width: 100%; border-collapse: collapse;">',
-			'',
-			'  <!-- Header Row -->',
-			'  <div class="product-row" style="display: table-row;">',
-			'    <div class="product-code" style="display: table-cell; width: 30%;"><span a5-item="_a5FieldEvent:product_code" ><span id="DLG1.LSTITEMS.PRODUCT_CODE.I.{*dataRow}">{product_code}</span></span></div>',
-			'    <div class="description" style="display: table-cell; width: 70%;"><span a5-item="_a5FieldEvent:description" ><span id="DLG1.LSTITEMS.DESCRIPTION.I.{*dataRow}">{description}</span></span></div>',
+			'<div class="list-item">',
+			'  <div class="product-header">',
+			'    <div class="product-code"><span a5-item="_a5FieldEvent:product_code" ><span id="DLG1.LSTITEMS.PRODUCT_CODE.I.{*dataRow}">{product_code}</span></span></div>',
+			'    <div class="description"><span a5-item="_a5FieldEvent:description" ><span id="DLG1.LSTITEMS.DESCRIPTION.I.{*dataRow}">{description}</span></span></div>',
 			'  </div>',
 			'',
-			'  <!-- Labels Row -->',
-			'  <div class="product-row" style="display: table-row;">',
-			'    <div class="label" style="display: table-cell;">SELL :</div>',
-			'    <div class="label" style="display: table-cell;">BONUS :</div>',
-			'  </div>',
+			'  <div class="product-breakdown">',
+			'    <div class="section table-header">',
+			'      <div class="label">SELL :</div>',
+			'      <div class="label">BONUS :</div>',
+			'    </div>',
 			'',
-			'  <!-- Quantity Row -->',
-			'  <div class="product-row" style="display: table-row;">',
-			'    <div class="value" style="display: table-cell;"><span a5-item="_a5FieldEvent:qty" ><span class="qty-bonus-display" style=""><span id="DLG1.LSTITEMS.QTY.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 5px; padding-left: 0px;"><input \ta5-on-change="qty" \ta5-on-blur="qty" \ta5-on-focus="qty" \ta5-on-keypress="qty" \ta5-on-keyup="qty" \ta5-on-keydown="qty" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="qty" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].qty:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.QTY.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'qty\')}</div>{*else}{qty}{*endif}</span></span></span></div>',
-			'    <div class="value" style="display: table-cell;"><span a5-item="_a5FieldEvent:bonus" ><span class="qty-bonus-display" style=""><span id="DLG1.LSTITEMS.BONUS.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 3px; padding-left: 0px;"><input \ta5-on-change="bonus" \ta5-on-blur="bonus" \ta5-on-focus="bonus" \ta5-on-keypress="bonus" \ta5-on-keyup="bonus" \ta5-on-keydown="bonus" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="bonus" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].bonus:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.BONUS.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'bonus\')}</div>{*else}{bonus}{*endif}</span></span></span></div>',
-			'  </div>',
+			'    <div class="section center">',
+			'      <div class="title">QTY</div>',
+			'      <div class="value"><span a5-item="_a5FieldEvent:qty" ><span class="qty-bonus-display" style=""><span id="DLG1.LSTITEMS.QTY.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 5px; padding-left: 0px;"><input \ta5-on-change="qty" \ta5-on-blur="qty" \ta5-on-focus="qty" \ta5-on-keypress="qty" \ta5-on-keyup="qty" \ta5-on-keydown="qty" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="qty" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].qty:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.QTY.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'qty\')}</div>{*else}{qty}{*endif}</span></span></span></div>',
+			'      <div class="value"><span a5-item="_a5FieldEvent:bonus" ><span class="qty-bonus-display" style=""><span id="DLG1.LSTITEMS.BONUS.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 3px; padding-left: 0px;"><input \ta5-on-change="bonus" \ta5-on-blur="bonus" \ta5-on-focus="bonus" \ta5-on-keypress="bonus" \ta5-on-keyup="bonus" \ta5-on-keydown="bonus" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="bonus" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].bonus:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.BONUS.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'bonus\')}</div>{*else}{bonus}{*endif}</span></span></span></div>',
+			'    </div>',
 			'',
-			'  <!-- Unit Row -->',
-			'  <div class="product-row" style="display: table-row;">',
-			'    <div class="title" style="display: table-cell;">UNIT</div>',
-			'    <div class="value" style="display: table-cell;"><span a5-item="_a5FieldEvent:sellunit" ><span class="qty-bonus-display" style="width: 80%;"><span id="DLG1.LSTITEMS.SELLUNIT.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 10px; padding-left: 0px;"><table id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL.CONTAINER" cellspacing="0" cellpadding="0" class="[theme:editButtonGroup.base.container.className|Alpha-MagentaEditBG]" style="width: 100%; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;; display: inline-table; white-space:normal; "> <tr> <td style="width:100%"> \t<input   a5-item = "A5EDITNOOP" onchange = "DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); var rowNumber = {[temp].info.index}; <escape<var newData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.data[\'R\'+ rowNumber]; var oldData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._data[rowNumber]; try{ DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._inplaceEditing.events.onchange.sellunit.call(this,rowNumber,oldData,newData,DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']); }catch(e) {}  ;>>" oncontextmenu = "$e.stopPropagation(event)" a5-index="{[temp].info.index}" a5-on-blur="sellunit" a5-on-focus="sellunit" a5-on-keypress="sellunit" a5-on-keyup="sellunit" a5-on-keydown="sellunit"\tid="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL"   value="{[scope]._editing.data[\'R\'+[temp].info.index].sellunit:escape}"  ontouchstart="$e.stopPropagation(event);" a5-name="sellunit" a5-on-change="sellunit" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"    readonly="readonly"  autocomplete="off"   size="200" class="[theme:editButtonGroup.base.container.editClassName|class.editButtonGroupEdit]" style="width: 100%; ; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;" /> \t </td> \t\t<td id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROLBUTTON" a5-item="A5EDITCOMBO:sellunit"  style="width: 0%;"><span id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL.CUSTOMBUTTONSTATIC.0"><img src="[theme:general.icons.edit.dropdown|svgIcon=#alpha-icon-chevronDown:icon]" /></span></td> \t</tr> </table> {[scope]._editing.getError([scope],[temp].info.index,\'sellunit\')}</div>{*else}{sellunit}{*endif}</span></span></span></div>',
-			'    <div class="value" style="display: table-cell;"><span a5-item="_a5FieldEvent:bonusunit" ><span class="qty-bonus-display" style=""><span id="DLG1.LSTITEMS.BONUSUNIT.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 10px; padding-left: 0px;"><select class="[class.dialogSelect]" \t\tstyle="width: 100%;" \t\ta5-name="bonusunit" \t\tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"  \t\ta5-on-change="bonusunit" \t\ta5-on-blur="bonusunit" \t\ta5-on-focus="bonusunit" \t\ta5-on-keypress="bonusunit" \t\ta5-on-keyup="bonusunit" \t\ta5-on-keydown="bonusunit" \t\ta5-index="{[temp].info.index}" \t\ta5-item = "A5EDITNOOP"   \t\tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].bonusunit:escape}" \t\tid="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL" \t\tontouchstart="$e.stopPropagation(event);" \t\t   \t\t > \t{[scope]._editing.selectOptions(\'__local__bonusunit\',[scope]._editing.data[\'R\'+[temp].info.index].bonusunit,\'bonusunit\',DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'])} </select>  {[scope]._editing.getError([scope],[temp].info.index,\'bonusunit\')}</div>{*else}{bonusunit}{*endif}</span></span></span></div>',
-			'  </div>',
+			'    <div class="section right" style="border: 1px solid black;">',
+			'      <div class="title">UNIT</div>',
+			'      <div class="value"><span a5-item="_a5FieldEvent:sellunit" ><span class="qty-bonus-display" style="width: 80%;"><span id="DLG1.LSTITEMS.SELLUNIT.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 10px; padding-left: 0px;"><table id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL.CONTAINER" cellspacing="0" cellpadding="0" class="[theme:editButtonGroup.base.container.className|Alpha-MagentaEditBG]" style="width: 100%; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;; display: inline-table; white-space:normal; "> <tr> <td style="width:100%"> \t<input   a5-item = "A5EDITNOOP" onchange = "DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); var rowNumber = {[temp].info.index}; <escape<var newData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.data[\'R\'+ rowNumber]; var oldData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._data[rowNumber]; try{ DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._inplaceEditing.events.onchange.sellunit.call(this,rowNumber,oldData,newData,DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']); }catch(e) {}  ;>>" oncontextmenu = "$e.stopPropagation(event)" a5-index="{[temp].info.index}" a5-on-blur="sellunit" a5-on-focus="sellunit" a5-on-keypress="sellunit" a5-on-keyup="sellunit" a5-on-keydown="sellunit"\tid="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL"   value="{[scope]._editing.data[\'R\'+[temp].info.index].sellunit:escape}"  ontouchstart="$e.stopPropagation(event);" a5-name="sellunit" a5-on-change="sellunit" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"    readonly="readonly"  autocomplete="off"   size="200" class="[theme:editButtonGroup.base.container.editClassName|class.editButtonGroupEdit]" style="width: 100%; ; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;" /> \t </td> \t\t<td id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROLBUTTON" a5-item="A5EDITCOMBO:sellunit"  style="width: 0%;"><span id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL.CUSTOMBUTTONSTATIC.0"><img src="[theme:general.icons.edit.dropdown|svgIcon=#alpha-icon-chevronDown:icon]" /></span></td> \t</tr> </table> {[scope]._editing.getError([scope],[temp].info.index,\'sellunit\')}</div>{*else}{sellunit}{*endif}</span></span></span></div>',
+			'      <div class="value"><span a5-item="_a5FieldEvent:bonusunit" ><span id="DLG1.LSTITEMS.BONUSUNIT.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 10px; display: inline-block; width: 120px"><table id="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL.CONTAINER" cellspacing="0" cellpadding="0" class="[theme:editButtonGroup.base.container.className|Alpha-MagentaEditBG]" style="width: 100%; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;; display: inline-table; white-space:normal; "> <tr> <td style="width:100%"> \t<input   a5-item = "A5EDITNOOP" onchange = "DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); var rowNumber = {[temp].info.index}; <escape<var newData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.data[\'R\'+ rowNumber]; var oldData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._data[rowNumber]; try{ DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._inplaceEditing.events.onchange.bonusunit.call(this,rowNumber,oldData,newData,DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']); }catch(e) {}  ;>>" oncontextmenu = "$e.stopPropagation(event)" a5-index="{[temp].info.index}" a5-on-blur="bonusunit" a5-on-focus="bonusunit" a5-on-keypress="bonusunit" a5-on-keyup="bonusunit" a5-on-keydown="bonusunit"\tid="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL"   value="{[scope]._editing.data[\'R\'+[temp].info.index].bonusunit:escape}"  ontouchstart="$e.stopPropagation(event);" a5-name="bonusunit" a5-on-change="bonusunit" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"    autocomplete="off"   size="200" class="[theme:editButtonGroup.base.container.editClassName|class.editButtonGroupEdit]" style="width: 100%; ; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;" /> \t </td> \t\t<td id="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROLBUTTON" a5-item="A5EDITCOMBO:bonusunit"  style="width: 0%;"><span id="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL.CUSTOMBUTTONSTATIC.0"><img src="[theme:general.icons.edit.dropdown|svgIcon=#alpha-icon-chevronDown:icon]" /></span></td> \t</tr> </table> {[scope]._editing.getError([scope],[temp].info.index,\'bonusunit\')}</div>{*else}{bonusunit}{*endif}</span></span></div>',
+			'    </div>',
 			'',
-			'  <!-- Action Buttons Row -->',
-			'  <div class="product-row" style="display: table-row;">',
-			'    <div class="save" style="display: table-cell;" colspan="3">',
+			'    <div class="section save">',
 			'      {*ensure __edit}',
 			'{*if __edit}',
 			'\t<span  title="Save edits">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-check:icon iconSizeable,24\'>>,\'a5-item="A5EDITSAVE"\')}</span>',
@@ -37056,11 +36997,10 @@ DLG1_DlgObj._listSystemOnClick('LSTITEMS',this.selection[0]);},
 			'    </div>',
 			'  </div>',
 			'',
-			'  <!-- Footer Row -->',
-			'  <div class="product-row" style="display: table-row;">',
-			'    <div class="footer-item" style="display: table-cell; width: 35%;">Unit Pr: <span a5-item="_a5FieldEvent:price" ><span id="DLG1.LSTITEMS.PRICE.I.{*dataRow}">{price}</span></span></div>',
-			'    <div class="footer-item" style="display: table-cell; width: 25%;">Disc.: <span a5-item="_a5FieldEvent:discount" ><span id="DLG1.LSTITEMS.DISCOUNT.I.{*dataRow}">{discount}</span></span></div>',
-			'    <div class="footer-item" style="display: table-cell; width: 40%;">{*ensure __edit}',
+			'  <div class="product-footer">',
+			'    <div class="footer-item" style="width: 35%">Unit Pr: <span a5-item="_a5FieldEvent:price" ><span id="DLG1.LSTITEMS.PRICE.I.{*dataRow}">{price}</span></span></div>',
+			'    <div class="footer-item" style="width: 25%">Disc.: <span a5-item="_a5FieldEvent:discount" ><span id="DLG1.LSTITEMS.DISCOUNT.I.{*dataRow}">{discount}</span></span></div>',
+			'    <div class="footer-item" style="width: 40%">{*ensure __edit}',
 			'{*if __edit}',
 			'\t<input value="{[scope]._virtualJavascript[\'TOTLINE\']([temp].info.index,[root],[scope])}"  class="[theme:edit.base.className]" readonly="readonly" style="width: 100%" />',
 			'{*else}',
@@ -37068,12 +37008,6 @@ DLG1_DlgObj._listSystemOnClick('LSTITEMS',this.selection[0]);},
 			'{*endif}',
 			'\t\t\t</div>',
 			'  </div>',
-			'',
-			'  <!-- Optional trailing content -->',
-			'  <div class="product-row" style="display: table-row;">',
-			'    <div class="footer-item" style="display: table-cell;" colspan="3"><span a5-item="_a5FieldEvent:va" ><span id="DLG1.LSTITEMS.VA.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 10px; display: inline-block; width: 100px"><select class="[class.dialogSelect]" \t\tstyle="width: 100%;" \t\ta5-name="va" \t\tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"  \t\ta5-on-change="va" \t\ta5-on-blur="va" \t\ta5-on-focus="va" \t\ta5-on-keypress="va" \t\ta5-on-keyup="va" \t\ta5-on-keydown="va" \t\ta5-index="{[temp].info.index}" \t\ta5-item = "A5EDITNOOP"   \t\tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].va:escape}" \t\tid="LSTITEMS.{[temp].info.index}.VA.CONTROL" \t\tontouchstart="$e.stopPropagation(event);" \t\t   \t\t > \t{[scope]._editing.selectOptions(\'__local__va\',[scope]._editing.data[\'R\'+[temp].info.index].va,\'va\',DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'])} </select>  {[scope]._editing.getError([scope],[temp].info.index,\'va\')}</div>{*else}{va}{*endif}</span></span></div>',
-			'  </div>',
-			'',
 			'</div>']
 		},
 		sample: {
@@ -71786,7 +71720,7 @@ DLG1_DlgObj.__info = {
 	"dateCreated": "2018-10-14",
 	"dateLastEdited": "2025-4-12",
 	"comments": "",
-	"revisionnumber": 2179
+	"revisionnumber": 2177
 }
 A5.__csdfmt = (obj) =>{ if(obj) return obj.stateInfo.__dtfmt};DLG1_DlgObj._workingPreview = false;
 $u.decimal = '.';
@@ -75603,8 +75537,7 @@ var lObj = DLG1_DlgObj.getControl('LSTITEMS');
 var __obj = {
 	"_inplaceEditing": {
 		"choices": {
-			"va": ['','unit','pack'],
-			"bonusunit": ['','Pack','U']
+			"bonusunit": ['','Pack','Unit']
 		}
 	}
 };
