@@ -404,6 +404,118 @@ iframe {-webkit-user-select: text;}
   justify-content: space-between;
   font-weight: bold;
   max-width: 100%; }
+.qty-bonus-display {
+  /* all: unset !important;  
+  display: inline-block !important;
+  width: 80px !important;
+  height: 35px !important;
+  line-height: 30px !important;
+  text-align: center !important;*/
+  /* vertical-align: center is invalid */
+  vertical-align: middle !important;
+  /*  border: 1px solid #ccc !important;
+  font-size: 14px !important;
+  background-color: #f9f9f9 !important;
+  box-sizing: border-box !important;
+*/
+  /* Units typo: 0pc is valid but probably meant to be 0px */
+  padding-top: 0px; }
+.list-item {
+  width: 100%;
+  border-bottom: 2px solid red;
+  padding: 10px;
+  font-size: 14px;
+  box-sizing: border-box; }
+/* Rows are now cells inside a table row */
+.section {
+  display: table-cell;
+  vertical-align: top;
+  padding: 0 5px; }
+.section.right {
+  display: table-cell;
+  vertical-align: top;
+  padding: 0 5px;
+  text-align: left;
+  width: 40%; }
+.section.save {
+  text-align: left;
+  width: 15%; }
+.title {
+  font-size: 12px;
+  font-weight: bold;
+  color: #000; }
+.value {
+  font-size: 14px;
+  margin-top: 5px; }
+.label {
+  font-size: 14px;
+  padding-top: 10px; }
+/* Footer can stay flex if you want, but here it is in table layout */
+.product-footer {
+  display: table;
+  width: 100%;
+  font-weight: bold;
+  table-layout: fixed; }
+.footer-item {
+  display: table-cell;
+  vertical-align: top;
+  padding-right: 10px; }
+.qty-bonus-display {
+  /* all: unset !important;  
+  display: inline-block !important;
+  width: 80px !important;
+  height: 35px !important;
+  line-height: 30px !important;
+  text-align: center !important;*/
+  /* vertical-align: center is invalid */
+  vertical-align: middle !important;
+  /*  border: 1px solid #ccc !important;
+  font-size: 14px !important;
+  background-color: #f9f9f9 !important;
+  box-sizing: border-box !important;
+*/
+  /* Units typo: 0pc is valid but probably meant to be 0px */
+  padding-top: 0px; }
+.list-item {
+  width: 100%;
+  border-bottom: 2px solid red;
+  padding: 10px;
+  font-size: 14px;
+  box-sizing: border-box; }
+/* Rows are now cells inside a table row */
+.section {
+  display: table-cell;
+  vertical-align: top;
+  padding: 0 5px; }
+.section.right {
+  display: table-cell;
+  vertical-align: top;
+  padding: 0 5px;
+  text-align: left;
+  width: 40%; }
+.section.save {
+  text-align: left;
+  width: 15%; }
+.title {
+  font-size: 12px;
+  font-weight: bold;
+  color: #000; }
+.value {
+  font-size: 14px;
+  margin-top: 5px; }
+.label {
+  font-size: 14px;
+  padding-top: 10px; }
+/* Footer can stay flex if you want, but here it is in table layout */
+.product-footer {
+  display: table;
+  width: 100%;
+  font-weight: bold;
+  table-layout: fixed; }
+.footer-item {
+  display: table-cell;
+  vertical-align: top;
+  padding-right: 10px; }
 .listItem {
   background: none !important;
   color: inherit !important;
@@ -537,8 +649,6 @@ iframe {-webkit-user-select: text;}
   margin: 10px;
   flex: 1 auto; }
 .DLG1_LSTITEMS_2 {
-  /* Header can stay flex */
-  /* Convert breakdown to table */
   /* Rows are now cells inside a table row */
   /* Footer can stay flex if you want, but here it is in table layout */ }
 .DLG1_LSTITEMS_2 .qty-bonus-display {
@@ -563,35 +673,14 @@ iframe {-webkit-user-select: text;}
   padding: 10px;
   font-size: 14px;
   box-sizing: border-box; }
-.DLG1_LSTITEMS_2 .product-header {
-  display: table;
-  width: 100%;
-  margin-bottom: 10px;
-  font-weight: bold; }
-.DLG1_LSTITEMS_2 .product-code,
-.DLG1_LSTITEMS_2 .description {
-  display: table-cell;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  vertical-align: middle; }
-.DLG1_LSTITEMS_2 .product-code {
-  width: 30%; }
-.DLG1_LSTITEMS_2 .description {
-  width: 70%; }
-.DLG1_LSTITEMS_2 .product-breakdown {
-  display: table;
-  width: 100%;
-  margin-bottom: 10px;
-  table-layout: fixed; }
 .DLG1_LSTITEMS_2 .section {
   display: table-cell;
   vertical-align: top;
   padding: 0 5px; }
-.DLG1_LSTITEMS_2 .section.center {
-  text-align: left;
-  width: 25%; }
 .DLG1_LSTITEMS_2 .section.right {
+  display: table-cell;
+  vertical-align: top;
+  padding: 0 5px;
   text-align: left;
   width: 40%; }
 .DLG1_LSTITEMS_2 .section.save {
@@ -34940,6 +35029,14 @@ return;}
 			}
 		},
 		settings: {
+			dropdown: {
+				returnable: {
+					javascript: ''
+				},
+				bonusunit: {
+					javascript: ''
+				}
+			},
 			sellunit: {
 				icon: 'svgIcon=#alpha-icon-chevronDown:icon',
 				icontype: 'Icon',
@@ -34965,43 +35062,6 @@ DLG1_DlgObj.setValue('dropdownbox1',data);},
 				onCommit: function() {
 result = DLG1_DlgObj.getValue('dropdownbox1');
 ; return result; }
-			},
-			editcombo: {
-				bonusunit: {
-	"type": "Static",
-	"windowwidth": "Default",
-	"windowheight": "",
-	"windowRowStyle": "",
-	"windowRowClass": "",
-	"windowHeadingClass": "",
-	"windowBodyStyle": "",
-	"staticchoices": "Pack\r\nUnit",
-	"dynamictype": "DatabaseQuery",
-	"dynamic": {
-		"connectionstring": "",
-		"tablename": "",
-		"fieldname": "",
-		"fieldsTodisplay": "",
-		"fillinfieldsmap": "",
-		"template": "",
-		"xbasicfunctionname": "",
-		"xbasicfunctiondefinition": "",
-		"javascriptfunctionname": "",
-		"javascript": ""
-	},
-	"userMustPickFromList": true,
-	"includeblankvalue": false,
-	"openListWhenClickOnControl": false,
-	"loaddatamethod": "AtRenderTime",
-	"allowdatacaching": true,
-	"loadingmessage": "Loading...",
-	"hasdynamicfilter": false,
-	"dynamicfilter": "",
-	"filter": "",
-	"order": "",
-	"userCanFilter": false,
-	"style": ""
-}
 			}
 		},
 		allow: true,
@@ -35198,7 +35258,8 @@ return '';},
 return '';}
 		},
 		choices: {
-			bonusunit: ['','Pack','Unit']
+			returnable: ['','male','female'],
+			bonusunit: ['','pack','unit']
 		}
 	},
 	sortVirtualJavascript_wh4: function(data) {
@@ -35496,8 +35557,8 @@ for(var i = 0; i < r.length; i++) {
 	A5.u.object.set(data,r[i].path,r[i].value);
 }
 },
-	theme: 'Alpha-Magenta',
-	className: 'pcs',
+	theme: 'Alpha-Magenta:subtleLined',
+	className: '',
 	scroll: {
 		axis: 'both',
 		indicator: {
@@ -36946,48 +37007,46 @@ DLG1_DlgObj._listSystemOnClick('LSTITEMS',this.selection[0]);},
 	},
 	layouts: {
 		default: {
-			content: {
-				className: 'listItem'
-			},
 			group: {
 				auto: false
 			},
 			type: 'template',
 			item: {
-				height: '190px',
-				className: 'listItem',
-				hoverClassName: 'listItem',
-				selectedClassName: 'listItem',
-				style: 'listItem',
+				height: '',
+				className: '',
+				hoverClassName: '',
+				selectedClassName: '',
+				style: '',
 				titleClassName: '',
 				separatorClassName: ''
 			},
 			template: [
-			'<div class="list-item">',
-			'  <div class="product-header">',
-			'    <div class="product-code"><span a5-item="_a5FieldEvent:product_code" ><span id="DLG1.LSTITEMS.PRODUCT_CODE.I.{*dataRow}">{product_code}</span></span></div>',
-			'    <div class="description"><span a5-item="_a5FieldEvent:description" ><span id="DLG1.LSTITEMS.DESCRIPTION.I.{*dataRow}">{description}</span></span></div>',
+			'<div class="listItemLined">',
+			'  <div style=" display: table; width: 100%; margin-bottom: 10px; font-weight: bold;">',
+			'    <div style = \'display: table-cell; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: middle; width: 30%\'>',
+			'    <span a5-item="_a5FieldEvent:product_code" ><span id="DLG1.LSTITEMS.PRODUCT_CODE.I.{*dataRow}">{product_code}</span></span></div>',
+			'    <div style = \'display: table-cell; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: middle; width: 70%\'><span a5-item="_a5FieldEvent:description" ><span id="DLG1.LSTITEMS.DESCRIPTION.I.{*dataRow}">{description}</span></span></div>',
 			'  </div>',
 			'',
-			'  <div class="product-breakdown">',
-			'    <div class="section table-header">',
-			'      <div class="label">SELL :</div>',
-			'      <div class="label">BONUS :</div>',
+			'  <div style=\'display: table; width: 100%; margin-bottom: 10px; table-layout: fixed;\'>',
+			'    <div style=\'  display: table-cell; vertical-align: top; padding: 0 5px; width:20%\'>',
+			'      <div style=\'font-size: 14px; padding-top: 10px;\'>SELL :</div>',
+			'      <div style=\'font-size: 14px; padding-top: 10px;\'>BONUS :</div>',
 			'    </div>',
 			'',
-			'    <div class="section center">',
+			'    <div style=\'display: table-cell; vertical-align: top; padding: 0 5px; text-align: left; width: 25%;\'>',
 			'      <div class="title">QTY</div>',
-			'      <div class="value"><span a5-item="_a5FieldEvent:qty" ><span id="DLG1.LSTITEMS.QTY.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 5px; display: inline-block; width: 50px"><input \ta5-on-change="qty" \ta5-on-blur="qty" \ta5-on-focus="qty" \ta5-on-keypress="qty" \ta5-on-keyup="qty" \ta5-on-keydown="qty" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="qty" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].qty:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.QTY.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'qty\')}</div>{*else}{qty}{*endif}</span></span></div>',
-			'      <div class="value"><span a5-item="_a5FieldEvent:bonus" ><span id="DLG1.LSTITEMS.BONUS.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 3px; display: inline-block; width: 50px"><input \ta5-on-change="bonus" \ta5-on-blur="bonus" \ta5-on-focus="bonus" \ta5-on-keypress="bonus" \ta5-on-keyup="bonus" \ta5-on-keydown="bonus" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="bonus" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].bonus:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.BONUS.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'bonus\')}</div>{*else}{bonus}{*endif}</span></span></div>',
+			'      <div style=\'font-size: 14px; margin-top: 5px;\'><span a5-item="_a5FieldEvent:qty" ><span id="DLG1.LSTITEMS.QTY.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 5px; display: inline-block; width: 50px"><input \ta5-on-change="qty" \ta5-on-blur="qty" \ta5-on-focus="qty" \ta5-on-keypress="qty" \ta5-on-keyup="qty" \ta5-on-keydown="qty" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="qty" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].qty:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.QTY.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'qty\')}</div>{*else}{qty}{*endif}</span></span></div>',
+			'      <div style=\'font-size: 14px; margin-top: 5px;\'><span a5-item="_a5FieldEvent:bonus" ><span id="DLG1.LSTITEMS.BONUS.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 3px; display: inline-block; width: 50px"><input \ta5-on-change="bonus" \ta5-on-blur="bonus" \ta5-on-focus="bonus" \ta5-on-keypress="bonus" \ta5-on-keyup="bonus" \ta5-on-keydown="bonus" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="bonus" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].bonus:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.BONUS.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'bonus\')}</div>{*else}{bonus}{*endif}</span></span></div>',
 			'    </div>',
 			'',
-			'    <div class="section right" style="border: 1px solid black;">',
-			'      <div class="title">UNIT</div>',
-			'      <div class="value"><span a5-item="_a5FieldEvent:sellunit" ><span class="qty-bonus-display" style="width: 80%;"><span id="DLG1.LSTITEMS.SELLUNIT.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 10px; padding-left: 0px;"><table id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL.CONTAINER" cellspacing="0" cellpadding="0" class="[theme:editButtonGroup.base.container.className|Alpha-MagentaEditBG]" style="width: 100%; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;; display: inline-table; white-space:normal; "> <tr> <td style="width:100%"> \t<input  \tid="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL"   value="{[scope]._editing.data[\'R\'+[temp].info.index].sellunit:escape}"  ontouchstart="$e.stopPropagation(event);" a5-name="sellunit" a5-on-change="sellunit" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"    autocomplete="off"   size="200" class="[theme:editButtonGroup.base.container.editClassName|class.editButtonGroupEdit]" style="width: 100%; ; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;" /> \t </td> \t\t<td id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROLBUTTON" a5-item="A5CUSTOMPICKER:sellunit"  style="width: 0%;"><span id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL.CUSTOMBUTTONSTATIC.0"><img src="[theme:general.icons.edit.dropdown|svgIcon=#alpha-icon-chevronDown:icon]" /></span></td> \t</tr> </table> {[scope]._editing.getError([scope],[temp].info.index,\'sellunit\')}</div>{*else}{sellunit}{*endif}</span></span></span></div>',
-			'      <div class="value"><span a5-item="_a5FieldEvent:bonusunit" ><span id="DLG1.LSTITEMS.BONUSUNIT.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 10px; display: inline-block; width: 120px"><table id="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL.CONTAINER" cellspacing="0" cellpadding="0" class="[theme:editButtonGroup.base.container.className|Alpha-MagentaEditBG]" style="width: 100%; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;; display: inline-table; white-space:normal; "> <tr> <td style="width:100%"> \t<input   a5-item = "A5EDITNOOP" onchange = "DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); var rowNumber = {[temp].info.index}; <escape<var newData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.data[\'R\'+ rowNumber]; var oldData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._data[rowNumber]; try{ DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._inplaceEditing.events.onchange.bonusunit.call(this,rowNumber,oldData,newData,DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']); }catch(e) {}  ;>>" oncontextmenu = "$e.stopPropagation(event)" a5-index="{[temp].info.index}" a5-on-blur="bonusunit" a5-on-focus="bonusunit" a5-on-keypress="bonusunit" a5-on-keyup="bonusunit" a5-on-keydown="bonusunit"\tid="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL"   value="{[scope]._editing.data[\'R\'+[temp].info.index].bonusunit:escape}"  ontouchstart="$e.stopPropagation(event);" a5-name="bonusunit" a5-on-change="bonusunit" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"    readonly="readonly"  autocomplete="off"   size="200" class="[theme:editButtonGroup.base.container.editClassName|class.editButtonGroupEdit]" style="width: 100%; ; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;" /> \t </td> \t\t<td id="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROLBUTTON" a5-item="A5EDITCOMBO:bonusunit"  style="width: 0%;"><span id="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL.CUSTOMBUTTONSTATIC.0"><img src="[theme:general.icons.edit.dropdown|svgIcon=#alpha-icon-chevronDown:icon]" /></span></td> \t</tr> </table> {[scope]._editing.getError([scope],[temp].info.index,\'bonusunit\')}</div>{*else}{bonusunit}{*endif}</span></span></div>',
+			'    <div class="[theme:listBox.base.item.parts.contentClassName|Alpha-MagentaListItemContent]" style=\'display: table-cell; vertical-align: top;  padding: 0 5px; text-align: left; width: 40%;\'>',
+			'      <div style=\' font-size: 12px; font-weight: bold; color: #000;\'>UNIT</div>',
+			'      <div style=\'font-size: 14px; margin-top: 5px;\'><span a5-item="_a5FieldEvent:sellunit" ><span class="qty-bonus-display" style="width: 80%;"><span id="DLG1.LSTITEMS.SELLUNIT.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 10px; padding-left: 0px;"><table id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL.CONTAINER" cellspacing="0" cellpadding="0" class="[theme:editButtonGroup.base.container.className|Alpha-MagentaEditBG]" style="width: 100%; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;; display: inline-table; white-space:normal; "> <tr> <td style="width:100%"> \t<input  \tid="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL"   value="{[scope]._editing.data[\'R\'+[temp].info.index].sellunit:escape}"  ontouchstart="$e.stopPropagation(event);" a5-name="sellunit" a5-on-change="sellunit" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"    autocomplete="off"   size="200" class="[theme:editButtonGroup.base.container.editClassName|class.editButtonGroupEdit]" style="width: 100%; ; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;" /> \t </td> \t\t<td id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROLBUTTON" a5-item="A5CUSTOMPICKER:sellunit"  style="width: 0%;"><span id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL.CUSTOMBUTTONSTATIC.0"><img src="[theme:general.icons.edit.dropdown|svgIcon=#alpha-icon-chevronDown:icon]" /></span></td> \t</tr> </table> {[scope]._editing.getError([scope],[temp].info.index,\'sellunit\')}</div>{*else}{sellunit}{*endif}</span></span></span></div>',
+			'      <div style=\'font-size: 14px; margin-top: 5px;\'><span a5-item="_a5FieldEvent:bonusunit" ><span id="DLG1.LSTITEMS.BONUSUNIT.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: ; display: inline-block; width: "><select class="[class.dialogSelect]" \t\tstyle="width: 100%;" \t\ta5-name="bonusunit" \t\tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"  \t\ta5-on-change="bonusunit" \t\ta5-on-blur="bonusunit" \t\ta5-on-focus="bonusunit" \t\ta5-on-keypress="bonusunit" \t\ta5-on-keyup="bonusunit" \t\ta5-on-keydown="bonusunit" \t\ta5-index="{[temp].info.index}" \t\ta5-item = "A5EDITNOOP"   \t\tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].bonusunit:escape}" \t\tid="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL" \t\tontouchstart="$e.stopPropagation(event);" \t\t   \t\t > \t{[scope]._editing.selectOptions(\'__local__bonusunit\',[scope]._editing.data[\'R\'+[temp].info.index].bonusunit,\'bonusunit\',DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'])} </select>  {[scope]._editing.getError([scope],[temp].info.index,\'bonusunit\')}</div>{*else}{bonusunit}{*endif}</span></span></div>',
 			'    </div>',
 			'',
-			'    <div class="section save">',
+			'    <div style= \'display: table-cell; vertical-align: top; padding: 0 5px; text-align: left; width: 15%;\'\'>',
 			'      {*ensure __edit}',
 			'{*if __edit}',
 			'\t<span  title="Save edits">{@A5.u.icon.html(<escape<\'svgIcon=#alpha-icon-check:icon iconSizeable,24\'>>,\'a5-item="A5EDITSAVE"\')}</span>',
@@ -37002,10 +37061,10 @@ DLG1_DlgObj._listSystemOnClick('LSTITEMS',this.selection[0]);},
 			'    </div>',
 			'  </div>',
 			'',
-			'  <div class="product-footer">',
-			'    <div class="footer-item" style="width: 35%">Unit Pr: <span a5-item="_a5FieldEvent:price" ><span id="DLG1.LSTITEMS.PRICE.I.{*dataRow}">{price}</span></span></div>',
-			'    <div class="footer-item" style="width: 25%">Disc.: <span a5-item="_a5FieldEvent:discount" ><span id="DLG1.LSTITEMS.DISCOUNT.I.{*dataRow}">{discount}</span></span></div>',
-			'    <div class="footer-item" style="width: 40%">{*ensure __edit}',
+			'  <div style=\'display: table; width: 100%; font-weight: bold; table-layout: fixed;\'>',
+			'    <div style="display: table-cell; vertical-align: top; padding-right: 10px; width: 35%">Unit Pr: <span a5-item="_a5FieldEvent:price" ><span id="DLG1.LSTITEMS.PRICE.I.{*dataRow}">{price}</span></span></div>',
+			'    <div style="display: table-cell; vertical-align: top; padding-right: 10px;width: 25%">Disc.: <span a5-item="_a5FieldEvent:discount" ><span id="DLG1.LSTITEMS.DISCOUNT.I.{*dataRow}">{discount}</span></span></div>',
+			'    <div style="display: table-cell; vertical-align: top; padding-right: 10px;width: 40%">{*ensure __edit}',
 			'{*if __edit}',
 			'\t<input value="{[scope]._virtualJavascript[\'TOTLINE\']([temp].info.index,[root],[scope])}"  class="[theme:edit.base.className]" readonly="readonly" style="width: 100%" />',
 			'{*else}',
@@ -37013,6 +37072,10 @@ DLG1_DlgObj._listSystemOnClick('LSTITEMS',this.selection[0]);},
 			'{*endif}',
 			'\t\t\t</div>',
 			'  </div>',
+			'',
+			'    <div class="[theme:listBox.base.item.parts.contentClassName|Alpha-MagentaListItemContent]">',
+			'        <span a5-item="_a5FieldEvent:returnable" ><span id="DLG1.LSTITEMS.RETURNABLE.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 10px; display: inline-block; width: 100px"><select class="[class.dialogSelect]" \t\tstyle="width: 100%;" \t\ta5-name="returnable" \t\tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"  \t\ta5-on-change="returnable" \t\ta5-on-blur="returnable" \t\ta5-on-focus="returnable" \t\ta5-on-keypress="returnable" \t\ta5-on-keyup="returnable" \t\ta5-on-keydown="returnable" \t\ta5-index="{[temp].info.index}" \t\ta5-item = "A5EDITNOOP"   \t\tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].returnable:escape}" \t\tid="LSTITEMS.{[temp].info.index}.RETURNABLE.CONTROL" \t\tontouchstart="$e.stopPropagation(event);" \t\t   \t\t > \t{[scope]._editing.selectOptions(\'__local__returnable\',[scope]._editing.data[\'R\'+[temp].info.index].returnable,\'returnable\',DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'])} </select>  {[scope]._editing.getError([scope],[temp].info.index,\'returnable\')}</div>{*else}{returnable}{*endif}</span></span></div>',
+			'',
 			'</div>']
 		},
 		sample: {
@@ -54082,7 +54145,7 @@ DLG1_DlgObj._functions.__fillContainer_LSTITEMS = function() {
 		A5.u.drag.remove(id,'scroll');
 	}
 	DLG1_DlgObj._listViewSettings['LSTITEMS'].containerId = id;
-	DLG1_DlgObj._listViewSettings['LSTITEMS'].className = 'pcs';
+	DLG1_DlgObj._listViewSettings['LSTITEMS'].className = '';
 	//blow away any existing content in the panel
 	$(id).innerHTML = '';
 }
@@ -71779,7 +71842,7 @@ DLG1_DlgObj.__info = {
 	"dateCreated": "2018-10-14",
 	"dateLastEdited": "2025-4-13",
 	"comments": "",
-	"revisionnumber": 2181
+	"revisionnumber": 2182
 }
 A5.__csdfmt = (obj) =>{ if(obj) return obj.stateInfo.__dtfmt};DLG1_DlgObj._workingPreview = false;
 $u.decimal = '.';
@@ -75602,7 +75665,8 @@ var lObj = DLG1_DlgObj.getControl('LSTITEMS');
 var __obj = {
 	"_inplaceEditing": {
 		"choices": {
-			"bonusunit": ['','Pack','Unit']
+			"returnable": ['','male','female'],
+			"bonusunit": ['','pack','unit']
 		}
 	}
 };
