@@ -542,18 +542,19 @@ iframe {-webkit-user-select: text;}
   /* Rows are now cells inside a table row */
   /* Footer can stay flex if you want, but here it is in table layout */ }
 .DLG1_LSTITEMS_2 .qty-bonus-display {
-  /* all: unset !important; */
+  /* all: unset !important;  
   display: inline-block !important;
   width: 80px !important;
   height: 35px !important;
   line-height: 30px !important;
-  text-align: center !important;
+  text-align: center !important;*/
   /* vertical-align: center is invalid */
   vertical-align: middle !important;
-  border: 1px solid #ccc !important;
+  /*  border: 1px solid #ccc !important;
   font-size: 14px !important;
   background-color: #f9f9f9 !important;
   box-sizing: border-box !important;
+*/
   /* Units typo: 0pc is valid but probably meant to be 0px */
   padding-top: 0px; }
 .DLG1_LSTITEMS_2 .list-item {
@@ -566,8 +567,7 @@ iframe {-webkit-user-select: text;}
   display: table;
   width: 100%;
   margin-bottom: 10px;
-  font-weight: bold;
-  table-layout: fixed; }
+  font-weight: bold; }
 .DLG1_LSTITEMS_2 .product-code,
 .DLG1_LSTITEMS_2 .description {
   display: table-cell;
@@ -34899,18 +34899,6 @@ $(this).type = 'number';},
 				bonus: function(rowNumber,oldData,newData,listObj) { var renderIndex = oldData['*renderIndex'];
 $(this).select();
 $(this).type = 'number';
-var mBonusQ = DLG1_DlgObj.stateInfo['thebonusqt'];
-$(this).value = mBonusQ;},
-				sellunit: function(rowNumber,oldData,newData,listObj) { var renderIndex = oldData['*renderIndex'];
-const select = document.querySelector('#LSTITEMS\\.'+rowNumber+'\\.SELLUNIT\\.CONTROL');
-console.log(select);
-console.log(rowNumber);
-if (select) {
-  select.style.setProperty('padding', '0', 'important');
-  console.log('Padding removed on select');
-} else {
-  console.warn('Select not found');
-}
 }
 			},
 			onkeypress: {
@@ -34918,8 +34906,7 @@ if (select) {
 if (event.key=='Enter' )  {
 	var lObj = DLG1_DlgObj.getControl('LSTITEMS');
 	lObj.editInplaceSaveRow(e.rowNumber)	;	
-}
-}
+}}
 			},
 			onedit: {
 				qty: function(rowNumber,data,listObj) { var renderIndex = data['*renderIndex'];
@@ -34967,15 +34954,14 @@ return;}
 				windowheight: '',
 				javascript: {
 					oncommit: '\r\n\r\nresult = DLG1_DlgObj.getValue(\'dropdownbox1\');\r\n',
-					onshow: '\r\nDLG1_DlgObj.setValue(\'dropdownbox1\',data);\r\n\r\n'
+					onshow: '\r\n\r\nDLG1_DlgObj.setValue(\'dropdownbox1\',data);'
 				},
 				listName: '',
 				listFieldName: '',
 				windowwidth: '50%',
 				window: 'CONTAINER_252',
 				onShow: function(data) { 
-DLG1_DlgObj.setValue('dropdownbox1',data);
-},
+DLG1_DlgObj.setValue('dropdownbox1',data);},
 				onCommit: function() {
 result = DLG1_DlgObj.getValue('dropdownbox1');
 ; return result; }
@@ -34984,7 +34970,7 @@ result = DLG1_DlgObj.getValue('dropdownbox1');
 				bonusunit: {
 	"type": "Static",
 	"windowwidth": "Default",
-	"windowheight": "200px",
+	"windowheight": "",
 	"windowRowStyle": "",
 	"windowRowClass": "",
 	"windowHeadingClass": "",
@@ -35005,7 +34991,7 @@ result = DLG1_DlgObj.getValue('dropdownbox1');
 	},
 	"userMustPickFromList": true,
 	"includeblankvalue": false,
-	"openListWhenClickOnControl": true,
+	"openListWhenClickOnControl": false,
 	"loaddatamethod": "AtRenderTime",
 	"allowdatacaching": true,
 	"loadingmessage": "Loading...",
@@ -36991,14 +36977,14 @@ DLG1_DlgObj._listSystemOnClick('LSTITEMS',this.selection[0]);},
 			'',
 			'    <div class="section center">',
 			'      <div class="title">QTY</div>',
-			'      <div class="value"><span a5-item="_a5FieldEvent:qty" ><span class="qty-bonus-display" style=""><span id="DLG1.LSTITEMS.QTY.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 5px; padding-left: 0px;"><input \ta5-on-change="qty" \ta5-on-blur="qty" \ta5-on-focus="qty" \ta5-on-keypress="qty" \ta5-on-keyup="qty" \ta5-on-keydown="qty" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="qty" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].qty:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.QTY.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'qty\')}</div>{*else}{qty}{*endif}</span></span></span></div>',
-			'      <div class="value"><span a5-item="_a5FieldEvent:bonus" ><span class="qty-bonus-display" style=""><span id="DLG1.LSTITEMS.BONUS.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 3px; padding-left: 0px;"><input \ta5-on-change="bonus" \ta5-on-blur="bonus" \ta5-on-focus="bonus" \ta5-on-keypress="bonus" \ta5-on-keyup="bonus" \ta5-on-keydown="bonus" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="bonus" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].bonus:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.BONUS.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'bonus\')}</div>{*else}{bonus}{*endif}</span></span></span></div>',
+			'      <div class="value"><span a5-item="_a5FieldEvent:qty" ><span id="DLG1.LSTITEMS.QTY.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 5px; display: inline-block; width: 50px"><input \ta5-on-change="qty" \ta5-on-blur="qty" \ta5-on-focus="qty" \ta5-on-keypress="qty" \ta5-on-keyup="qty" \ta5-on-keydown="qty" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="qty" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].qty:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.QTY.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'qty\')}</div>{*else}{qty}{*endif}</span></span></div>',
+			'      <div class="value"><span a5-item="_a5FieldEvent:bonus" ><span id="DLG1.LSTITEMS.BONUS.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 3px; display: inline-block; width: 50px"><input \ta5-on-change="bonus" \ta5-on-blur="bonus" \ta5-on-focus="bonus" \ta5-on-keypress="bonus" \ta5-on-keyup="bonus" \ta5-on-keydown="bonus" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="bonus" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].bonus:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.BONUS.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'bonus\')}</div>{*else}{bonus}{*endif}</span></span></div>',
 			'    </div>',
 			'',
 			'    <div class="section right" style="border: 1px solid black;">',
 			'      <div class="title">UNIT</div>',
 			'      <div class="value"><span a5-item="_a5FieldEvent:sellunit" ><span class="qty-bonus-display" style="width: 80%;"><span id="DLG1.LSTITEMS.SELLUNIT.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 10px; padding-left: 0px;"><table id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL.CONTAINER" cellspacing="0" cellpadding="0" class="[theme:editButtonGroup.base.container.className|Alpha-MagentaEditBG]" style="width: 100%; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;; display: inline-table; white-space:normal; "> <tr> <td style="width:100%"> \t<input  \tid="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL"   value="{[scope]._editing.data[\'R\'+[temp].info.index].sellunit:escape}"  ontouchstart="$e.stopPropagation(event);" a5-name="sellunit" a5-on-change="sellunit" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"    autocomplete="off"   size="200" class="[theme:editButtonGroup.base.container.editClassName|class.editButtonGroupEdit]" style="width: 100%; ; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;" /> \t </td> \t\t<td id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROLBUTTON" a5-item="A5CUSTOMPICKER:sellunit"  style="width: 0%;"><span id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL.CUSTOMBUTTONSTATIC.0"><img src="[theme:general.icons.edit.dropdown|svgIcon=#alpha-icon-chevronDown:icon]" /></span></td> \t</tr> </table> {[scope]._editing.getError([scope],[temp].info.index,\'sellunit\')}</div>{*else}{sellunit}{*endif}</span></span></span></div>',
-			'      <div class="value"><span a5-item="_a5FieldEvent:bonusunit" ><span id="DLG1.LSTITEMS.BONUSUNIT.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 10px; display: inline-block; width: 120px"><table id="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL.CONTAINER" cellspacing="0" cellpadding="0" class="[theme:editButtonGroup.base.container.className|Alpha-MagentaEditBG]" style="width: 100%; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;; display: inline-table; white-space:normal; "> <tr> <td style="width:100%"> \t<input  a5-item="A5EDITCOMBO:bonusunit" a5-item = "A5EDITNOOP" onchange = "DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); var rowNumber = {[temp].info.index}; <escape<var newData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.data[\'R\'+ rowNumber]; var oldData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._data[rowNumber]; try{ DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._inplaceEditing.events.onchange.bonusunit.call(this,rowNumber,oldData,newData,DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']); }catch(e) {}  ;>>" oncontextmenu = "$e.stopPropagation(event)" a5-index="{[temp].info.index}" a5-on-blur="bonusunit" a5-on-focus="bonusunit" a5-on-keypress="bonusunit" a5-on-keyup="bonusunit" a5-on-keydown="bonusunit"\tid="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL"   value="{[scope]._editing.data[\'R\'+[temp].info.index].bonusunit:escape}"  ontouchstart="$e.stopPropagation(event);" a5-name="bonusunit" a5-on-change="bonusunit" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"    readonly="readonly"  autocomplete="off"   size="200" class="[theme:editButtonGroup.base.container.editClassName|class.editButtonGroupEdit]" style="width: 100%; ; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;" /> \t </td> \t\t<td id="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROLBUTTON" a5-item="A5EDITCOMBO:bonusunit"  style="width: 0%;"><span id="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL.CUSTOMBUTTONSTATIC.0"><img src="[theme:general.icons.edit.dropdown|svgIcon=#alpha-icon-chevronDown:icon]" /></span></td> \t</tr> </table> {[scope]._editing.getError([scope],[temp].info.index,\'bonusunit\')}</div>{*else}{bonusunit}{*endif}</span></span></div>',
+			'      <div class="value"><span a5-item="_a5FieldEvent:bonusunit" ><span id="DLG1.LSTITEMS.BONUSUNIT.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 10px; display: inline-block; width: 120px"><table id="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL.CONTAINER" cellspacing="0" cellpadding="0" class="[theme:editButtonGroup.base.container.className|Alpha-MagentaEditBG]" style="width: 100%; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;; display: inline-table; white-space:normal; "> <tr> <td style="width:100%"> \t<input   a5-item = "A5EDITNOOP" onchange = "DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); var rowNumber = {[temp].info.index}; <escape<var newData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.data[\'R\'+ rowNumber]; var oldData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._data[rowNumber]; try{ DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._inplaceEditing.events.onchange.bonusunit.call(this,rowNumber,oldData,newData,DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']); }catch(e) {}  ;>>" oncontextmenu = "$e.stopPropagation(event)" a5-index="{[temp].info.index}" a5-on-blur="bonusunit" a5-on-focus="bonusunit" a5-on-keypress="bonusunit" a5-on-keyup="bonusunit" a5-on-keydown="bonusunit"\tid="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL"   value="{[scope]._editing.data[\'R\'+[temp].info.index].bonusunit:escape}"  ontouchstart="$e.stopPropagation(event);" a5-name="bonusunit" a5-on-change="bonusunit" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"    readonly="readonly"  autocomplete="off"   size="200" class="[theme:editButtonGroup.base.container.editClassName|class.editButtonGroupEdit]" style="width: 100%; ; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;" /> \t </td> \t\t<td id="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROLBUTTON" a5-item="A5EDITCOMBO:bonusunit"  style="width: 0%;"><span id="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL.CUSTOMBUTTONSTATIC.0"><img src="[theme:general.icons.edit.dropdown|svgIcon=#alpha-icon-chevronDown:icon]" /></span></td> \t</tr> </table> {[scope]._editing.getError([scope],[temp].info.index,\'bonusunit\')}</div>{*else}{bonusunit}{*endif}</span></span></div>',
 			'    </div>',
 			'',
 			'    <div class="section save">',
@@ -37046,7 +37032,7 @@ DLG1_DlgObj._listSystemOnClick('LSTITEMS',this.selection[0]);},
 			template: [
 			'<div style="display: table; width: 100%;">',
 			'\t<div style="display: table-cell;">',
-			'\t\t<div class="[theme:listBox.base.item.parts.mainClassName|Alpha-MagentaListItemLabelMain]" style="float: right;"><span a5-item="_a5FieldEvent:qty" ><span class="qty-bonus-display" style=""><span id="DLG1.LSTITEMS.QTY.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 5px; padding-left: 0px;"><input \ta5-on-change="qty" \ta5-on-blur="qty" \ta5-on-focus="qty" \ta5-on-keypress="qty" \ta5-on-keyup="qty" \ta5-on-keydown="qty" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="qty" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].qty:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.QTY.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'qty\')}</div>{*else}{qty}{*endif}</span></span></span></div>',
+			'\t\t<div class="[theme:listBox.base.item.parts.mainClassName|Alpha-MagentaListItemLabelMain]" style="float: right;"><span a5-item="_a5FieldEvent:qty" ><span id="DLG1.LSTITEMS.QTY.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 5px; display: inline-block; width: 50px"><input \ta5-on-change="qty" \ta5-on-blur="qty" \ta5-on-focus="qty" \ta5-on-keypress="qty" \ta5-on-keyup="qty" \ta5-on-keydown="qty" \ta5-index="{[temp].info.index}" \ta5-item = "A5EDITNOOP" \toncontextmenu = "$e.stopPropagation(event)"  \ta5-name="qty" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); " \tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].qty:escape}" \tclass="[theme:edit.base.className]" \t  \tid="LSTITEMS.{[temp].info.index}.QTY.CONTROL" \tontouchstart="$e.stopPropagation(event);" \tplaceholder="" \t    \tstyle="width: 100%;"/> {[scope]._editing.getError([scope],[temp].info.index,\'qty\')}</div>{*else}{qty}{*endif}</span></span></div>',
 			'        <span a5-item="_a5FieldEvent:custid" ><span id="DLG1.LSTITEMS.CUSTID.I.{*dataRow}">{custid}</span></span>',
 			'\t\t<div class="[theme:listBox.base.item.parts.mainClassName|Alpha-MagentaListItemLabelMain]"><span a5-item="_a5FieldEvent:description" ><span id="DLG1.LSTITEMS.DESCRIPTION.I.{*dataRow}">{description}</span></span></div>',
 			'\t\t<div class="[theme:listBox.base.item.parts.subClassName|Alpha-MagentaListItemLabelSub]"><span a5-item="_a5FieldEvent:product_code" ><span id="DLG1.LSTITEMS.PRODUCT_CODE.I.{*dataRow}">{product_code}</span></span></div>',
@@ -71793,7 +71779,7 @@ DLG1_DlgObj.__info = {
 	"dateCreated": "2018-10-14",
 	"dateLastEdited": "2025-4-13",
 	"comments": "",
-	"revisionnumber": 2180
+	"revisionnumber": 2181
 }
 A5.__csdfmt = (obj) =>{ if(obj) return obj.stateInfo.__dtfmt};DLG1_DlgObj._workingPreview = false;
 $u.decimal = '.';
