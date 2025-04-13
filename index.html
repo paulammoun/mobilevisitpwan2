@@ -5690,7 +5690,7 @@ var DLG1_DlgObj = new A5.DialogComponentHelper('DLG1',{
 	"SPECIALREQUEST": "",
 	"COMENT": "",
 	"TEST1": "0",
-	"TEST2": "12/04/2025",
+	"TEST2": "13/04/2025",
 	"LSTVISITHEAD": "",
 	"DEVLAT": "",
 	"DEVLONG": "",
@@ -5864,7 +5864,7 @@ var DLG1_DlgObj = new A5.DialogComponentHelper('DLG1',{
 	"LSTGEOLOC": "",
 	"MEDREP": "Invalid expression: convert_number(\"\"+convert_type(a,\"N\"))",
 	"MEDREP_1": "Invalid expression: convert_number(\"\"+convert_type(a,\"N\"))",
-	"DATE": "12/04/2025",
+	"DATE": "13/04/2025",
 	"PASSOK": "0",
 	"SYNCINPROGRESS": "0",
 	"FAILEDSYNC": "0",
@@ -5907,7 +5907,7 @@ var DLG1_DlgObj = new A5.DialogComponentHelper('DLG1',{
 	"SPECIALREQUEST": "",
 	"COMENT": "",
 	"TEST1": "0",
-	"TEST2": "12/04/2025",
+	"TEST2": "13/04/2025",
 	"LSTVISITHEAD": "",
 	"DEVLAT": "",
 	"DEVLONG": "",
@@ -6081,7 +6081,7 @@ var DLG1_DlgObj = new A5.DialogComponentHelper('DLG1',{
 	"LSTGEOLOC": "",
 	"MEDREP": "Invalid expression: convert_number(\"\"+convert_type(a,\"N\"))",
 	"MEDREP_1": "Invalid expression: convert_number(\"\"+convert_type(a,\"N\"))",
-	"DATE": "12/04/2025",
+	"DATE": "13/04/2025",
 	"PASSOK": "0",
 	"SYNCINPROGRESS": "0",
 	"FAILEDSYNC": "0",
@@ -34980,10 +34980,42 @@ DLG1_DlgObj.setValue('dropdownbox1',data);
 result = DLG1_DlgObj.getValue('dropdownbox1');
 ; return result; }
 			},
-			dropdown: {
+			editcombo: {
 				bonusunit: {
-					javascript: ''
-				}
+	"type": "Static",
+	"windowwidth": "Default",
+	"windowheight": "200px",
+	"windowRowStyle": "",
+	"windowRowClass": "",
+	"windowHeadingClass": "",
+	"windowBodyStyle": "",
+	"staticchoices": "Pack\r\nUnit",
+	"dynamictype": "DatabaseQuery",
+	"dynamic": {
+		"connectionstring": "",
+		"tablename": "",
+		"fieldname": "",
+		"fieldsTodisplay": "",
+		"fillinfieldsmap": "",
+		"template": "",
+		"xbasicfunctionname": "",
+		"xbasicfunctiondefinition": "",
+		"javascriptfunctionname": "",
+		"javascript": ""
+	},
+	"userMustPickFromList": true,
+	"includeblankvalue": false,
+	"openListWhenClickOnControl": true,
+	"loaddatamethod": "AtRenderTime",
+	"allowdatacaching": true,
+	"loadingmessage": "Loading...",
+	"hasdynamicfilter": false,
+	"dynamicfilter": "",
+	"filter": "",
+	"order": "",
+	"userCanFilter": false,
+	"style": ""
+}
 			}
 		},
 		allow: true,
@@ -35180,7 +35212,7 @@ return '';},
 return '';}
 		},
 		choices: {
-			bonusunit: ['','pack unit']
+			bonusunit: ['','Pack','Unit']
 		}
 	},
 	sortVirtualJavascript_wh4: function(data) {
@@ -36966,7 +36998,7 @@ DLG1_DlgObj._listSystemOnClick('LSTITEMS',this.selection[0]);},
 			'    <div class="section right" style="border: 1px solid black;">',
 			'      <div class="title">UNIT</div>',
 			'      <div class="value"><span a5-item="_a5FieldEvent:sellunit" ><span class="qty-bonus-display" style="width: 80%;"><span id="DLG1.LSTITEMS.SELLUNIT.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 10px; padding-left: 0px;"><table id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL.CONTAINER" cellspacing="0" cellpadding="0" class="[theme:editButtonGroup.base.container.className|Alpha-MagentaEditBG]" style="width: 100%; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;; display: inline-table; white-space:normal; "> <tr> <td style="width:100%"> \t<input  \tid="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL"   value="{[scope]._editing.data[\'R\'+[temp].info.index].sellunit:escape}"  ontouchstart="$e.stopPropagation(event);" a5-name="sellunit" a5-on-change="sellunit" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"    autocomplete="off"   size="200" class="[theme:editButtonGroup.base.container.editClassName|class.editButtonGroupEdit]" style="width: 100%; ; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;" /> \t </td> \t\t<td id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROLBUTTON" a5-item="A5CUSTOMPICKER:sellunit"  style="width: 0%;"><span id="LSTITEMS.{[temp].info.index}.SELLUNIT.CONTROL.CUSTOMBUTTONSTATIC.0"><img src="[theme:general.icons.edit.dropdown|svgIcon=#alpha-icon-chevronDown:icon]" /></span></td> \t</tr> </table> {[scope]._editing.getError([scope],[temp].info.index,\'sellunit\')}</div>{*else}{sellunit}{*endif}</span></span></span></div>',
-			'      <div class="value"><span a5-item="_a5FieldEvent:bonusunit" ><span id="DLG1.LSTITEMS.BONUSUNIT.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 10px; display: inline-block; width: 120px"><select class="[class.dialogSelect]" \t\tstyle="width: 100%;" \t\ta5-name="bonusunit" \t\tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"  \t\ta5-on-change="bonusunit" \t\ta5-on-blur="bonusunit" \t\ta5-on-focus="bonusunit" \t\ta5-on-keypress="bonusunit" \t\ta5-on-keyup="bonusunit" \t\ta5-on-keydown="bonusunit" \t\ta5-index="{[temp].info.index}" \t\ta5-item = "A5EDITNOOP"   \t\tvalue="{[scope]._editing.data[\'R\'+[temp].info.index].bonusunit:escape}" \t\tid="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL" \t\tontouchstart="$e.stopPropagation(event);" \t\t   \t\t > \t{[scope]._editing.selectOptions(\'__local__bonusunit\',[scope]._editing.data[\'R\'+[temp].info.index].bonusunit,\'bonusunit\',DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'])} </select>  {[scope]._editing.getError([scope],[temp].info.index,\'bonusunit\')}</div>{*else}{bonusunit}{*endif}</span></span></div>',
+			'      <div class="value"><span a5-item="_a5FieldEvent:bonusunit" ><span id="DLG1.LSTITEMS.BONUSUNIT.I.{*dataRow}">{*ensure __edit}{*if __edit}<div style="padding-right: 10px; display: inline-block; width: 120px"><table id="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL.CONTAINER" cellspacing="0" cellpadding="0" class="[theme:editButtonGroup.base.container.className|Alpha-MagentaEditBG]" style="width: 100%; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;; display: inline-table; white-space:normal; "> <tr> <td style="width:100%"> \t<input  a5-item="A5EDITCOMBO:bonusunit" a5-item = "A5EDITNOOP" onchange = "DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index}); var rowNumber = {[temp].info.index}; <escape<var newData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.data[\'R\'+ rowNumber]; var oldData = DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._data[rowNumber]; try{ DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._inplaceEditing.events.onchange.bonusunit.call(this,rowNumber,oldData,newData,DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']); }catch(e) {}  ;>>" oncontextmenu = "$e.stopPropagation(event)" a5-index="{[temp].info.index}" a5-on-blur="bonusunit" a5-on-focus="bonusunit" a5-on-keypress="bonusunit" a5-on-keyup="bonusunit" a5-on-keydown="bonusunit"\tid="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL"   value="{[scope]._editing.data[\'R\'+[temp].info.index].bonusunit:escape}"  ontouchstart="$e.stopPropagation(event);" a5-name="bonusunit" a5-on-change="bonusunit" \tonchange="DLG1_DlgObj._controlInst[\'R1.LSTITEMS\']._editing.store(DLG1_DlgObj._controlInst[\'R1.LSTITEMS\'],{[temp].info.index});"    readonly="readonly"  autocomplete="off"   size="200" class="[theme:editButtonGroup.base.container.editClassName|class.editButtonGroupEdit]" style="width: 100%; ; box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; -webkit-box-sizing: border-box;" /> \t </td> \t\t<td id="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROLBUTTON" a5-item="A5EDITCOMBO:bonusunit"  style="width: 0%;"><span id="LSTITEMS.{[temp].info.index}.BONUSUNIT.CONTROL.CUSTOMBUTTONSTATIC.0"><img src="[theme:general.icons.edit.dropdown|svgIcon=#alpha-icon-chevronDown:icon]" /></span></td> \t</tr> </table> {[scope]._editing.getError([scope],[temp].info.index,\'bonusunit\')}</div>{*else}{bonusunit}{*endif}</span></span></div>',
 			'    </div>',
 			'',
 			'    <div class="section save">',
@@ -71759,9 +71791,9 @@ DLG1_DlgObj.__info = {
 	"createdBy": "Paul",
 	"lastUpdatedBy": "",
 	"dateCreated": "2018-10-14",
-	"dateLastEdited": "2025-4-12",
+	"dateLastEdited": "2025-4-13",
 	"comments": "",
-	"revisionnumber": 2179
+	"revisionnumber": 2180
 }
 A5.__csdfmt = (obj) =>{ if(obj) return obj.stateInfo.__dtfmt};DLG1_DlgObj._workingPreview = false;
 $u.decimal = '.';
@@ -74503,7 +74535,7 @@ if(listObj) listObj._state.paginated = false;
 if(listObj) listObj._state._optimizedJSON = true;
 if(listObj) listObj._state.highlight = {  };
 if(listObj) listObj._state.whereClause = '';
-if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n12/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
+if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n13/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
 listObj._state.order = '';
 		
 		var flagPersist = false;
@@ -74596,7 +74628,7 @@ if(listObj) listObj._state.paginated = false;
 if(listObj) listObj._state._optimizedJSON = true;
 if(listObj) listObj._state.highlight = {  };
 if(listObj) listObj._state.whereClause = '';
-if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n12/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
+if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n13/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
 listObj._state.order = 'Description';
 		
 		var flagPersist = false;
@@ -74655,7 +74687,7 @@ if(listObj) listObj._state.paginated = false;
 if(listObj) listObj._state._optimizedJSON = true;
 if(listObj) listObj._state.highlight = {  };
 if(listObj) listObj._state.whereClause = '';
-if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n12/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
+if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n13/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
 listObj._state.order = 'Description';
 		
 		var flagPersist = false;
@@ -74691,7 +74723,7 @@ if(listObj) listObj._state.paginated = false;
 if(listObj) listObj._state._optimizedJSON = true;
 if(listObj) listObj._state.highlight = {  };
 if(listObj) listObj._state.whereClause = '';
-if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n12/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
+if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n13/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
 listObj._state.order = 'Description';
 		
 		var flagPersist = false;
@@ -74769,7 +74801,7 @@ if(listObj) listObj._state.paginated = false;
 if(listObj) listObj._state._optimizedJSON = true;
 if(listObj) listObj._state.highlight = {  };
 if(listObj) listObj._state.whereClause = '';
-if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n12/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
+if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n13/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
 listObj._state.order = 'Description';
 		
 		var flagPersist = false;
@@ -74803,7 +74835,7 @@ if(listObj) listObj._state.paginated = false;
 if(listObj) listObj._state._optimizedJSON = true;
 if(listObj) listObj._state.highlight = {  };
 if(listObj) listObj._state.whereClause = 'company_id = :MCOMPID  AND  medred_id = :MMEDREPID';
-if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n12/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
+if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n13/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
 listObj._state.order = '';
 		
 		var flagPersist = false;
@@ -74844,7 +74876,7 @@ if(listObj) listObj._state.paginated = false;
 if(listObj) listObj._state._optimizedJSON = true;
 if(listObj) listObj._state.highlight = {  };
 if(listObj) listObj._state.whereClause = 'company_id = :MCOMPID  AND  medred_id = :MMEDREPID';
-if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n12/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
+if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n13/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
 listObj._state.order = '';
 		
 		var flagPersist = false;
@@ -74924,7 +74956,7 @@ if(listObj) listObj._state.paginated = false;
 if(listObj) listObj._state._optimizedJSON = true;
 if(listObj) listObj._state.highlight = {  };
 if(listObj) listObj._state.whereClause = '';
-if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n12/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
+if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n13/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
 listObj._state.order = '';
 		
 		var flagPersist = false;
@@ -75003,7 +75035,7 @@ if(listObj) listObj._state.paginated = true;
 if(listObj) listObj._state._optimizedJSON = false;
 if(listObj) listObj._state.highlight = {  };
 if(listObj) listObj._state.whereClause = 'company_id = :MCOMPID  AND  user_id = :MMEDREPID';
-if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n12/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
+if(listObj) listObj._state.whereParameters = '0|||N|MMEDREPID\n0|||N|POIDID\n0|||N|MPOIID\n13/04/2025|||D|MDATE\n0|||N|LOADTYPE\n0|||N|MCOMPID\n0|||N|SYNCINPROGRESS\n0|||N|MREPID\n|||D|MTDATE\n0|||N|SHOWALLDAYINPLAN\n0|||N|MREPID_1\n|||C|MMEDREPNAME\n|||C|MREGIONDESC\n|||C|MCOMPNAME\n';
 listObj._state.order = '';
 		
 		var flagPersist = false;
@@ -75584,7 +75616,7 @@ var lObj = DLG1_DlgObj.getControl('LSTITEMS');
 var __obj = {
 	"_inplaceEditing": {
 		"choices": {
-			"bonusunit": ['','pack unit']
+			"bonusunit": ['','Pack','Unit']
 		}
 	}
 };
@@ -76165,7 +76197,7 @@ if(eleS && eleT) {
 
 
 
-;DLG1_DlgObj.setStateInfo({ 	__args_n_MMEDREPID: '0', 	__args_n_POIDID: '0', 	__args_n_MPOIID: '0', 	__args_d_MDATE: '12/04/2025', 	__args_n_LOADTYPE: '0', 	__args_n_MCOMPID: '0', 	__args_n_SYNCINPROGRESS: '0', 	__args_n_MREPID: '0', 	__args_d_MTDATE: '', 	__args_n_SHOWALLDAYINPLAN: '0', 	__args_n_MREPID_1: '0', 	__args_c_MMEDREPNAME: '', 	__args_c_MREGIONDESC: '', 	__args_c_MCOMPNAME: '', 	argValuesENC: '7C3tO+HPao0zNV11hCNhkXROUiAe0lvZWY7Xx6LngtmeYNlvKd03vaMUf1FQyyDMHkaLn31fVytMkjMWFQJW2XqMjeADGi+MZr5vQEverln7vv/ExOy11CO5U6OCKIW5xk/RPtEPTtp2K0ikBRC5Tep7jwlhXegxBxqyOZ0G3e576KZp8F8PhTT/HraP0aj2884Qimg2o0LcdOGL+x1VMBFozA8xiUHHkHQ3Ij/2AffcXdpl/jS/oI9Qaho4/yeJ496tZ9TUekq8wQZAKSGba9xIWeYW+L1m2CutnICngglrYnwb1I3JB/MeVfPXnStfz+ic5ozltifsFBrcD4KcNWNS1R9TL49qr9Qjd+NMi5kpABJ9GUkZg7gBJ5Ng5d9MxxDlyNYU6F1Kg00XYe3FLhMhVZt1cxVQpCJtzPN88xOrIOEfOUH539zF3gGN2WmNafdoosFlBKrsVdpV6da7gfRI4gF+pmRmKoTWT+j1kKyGX6HZdSX24+CUGM8JQxxNQU3QjZDYEiVEiyrTif1Mryn9LwucButoPG6++GtcahY=', 	__debugInfo: 'ssi-6014' });//ssi-6014;
+;DLG1_DlgObj.setStateInfo({ 	__args_n_MMEDREPID: '0', 	__args_n_POIDID: '0', 	__args_n_MPOIID: '0', 	__args_d_MDATE: '13/04/2025', 	__args_n_LOADTYPE: '0', 	__args_n_MCOMPID: '0', 	__args_n_SYNCINPROGRESS: '0', 	__args_n_MREPID: '0', 	__args_d_MTDATE: '', 	__args_n_SHOWALLDAYINPLAN: '0', 	__args_n_MREPID_1: '0', 	__args_c_MMEDREPNAME: '', 	__args_c_MREGIONDESC: '', 	__args_c_MCOMPNAME: '', 	argValuesENC: '7C3tO+HPao0zNV11hCNhkXROUiAe0lvZWY7Xx6LngtmeYNlvKd03vaMUf1FQyyDMHkaLn31fVytMkjMWFQJW2XqMjeADGi+MZr5vQEverln7vv/ExOy11CO5U6OCKIW5xk/RPtEPTtpNobBM8Nm2ZdeilLvtNupv/yiwgJjtv5SMEqg13pnI7lzRkdPv7mxbIPRhT3HgZMVtilLuRRGjrjktovYfxYISNE/f/WsXOlPMqbNKpc1Jd7qGKm2+NeBYCVFn6SC9htPVxx/U31RNvLKCI1pQ3hOweSQO8nvfMkzu/SUZYQfAS/sKyovcfyx+JBkY+XrYN7WNbfSa7B3sgfOrwSYNtvubNP8hmaQjsVvVEGFG0UWzH6yfv3W+FISDAHiuRCXfhfz5vvS7v69zb184xCVKdKfPO71HpmB1ogJ7H6f7UUgSOzzEmBnjAl8cyf5rwcFayF1B8cB8yk1c8qZSREG3WIFKhdMHqyfhYmr89+MjDSYZ8x/FkfA0sgRjKlOBHCEEzz08ah6xnIdqKWMAl6jyubOBn2dfQJyUPdY=', 	__debugInfo: 'ssi-6014' });//ssi-6014;
 ;
 
 
